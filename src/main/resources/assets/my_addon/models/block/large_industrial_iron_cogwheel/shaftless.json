@@ -1,0 +1,9 @@
+{
+  "parent": "block/block",
+  "loader": "forge:obj",
+  "flip_v": true,
+  "model": "my_addon:models/block/large_industrial_iron_cogwheel/shaftless.obj",
+  "textures": {
+    "large_industrial_iron_cogwheel": "my_addon:block/large_industrial_iron_cogwheel"
+  }
+}

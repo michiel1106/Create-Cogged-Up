@@ -1,0 +1,11 @@
+# Blender 4.0.2 MTL File: 'mccog.blend'
+# www.blender.org
+
+newmtl large_industrial_iron_cogwheel
+map_Kd #large_industrial_iron_cogwheel
+
+newmtl shaft_side
+map_Kd #shaft_side
+
+newmtl shaft_top
+map_Kd #shaft_top

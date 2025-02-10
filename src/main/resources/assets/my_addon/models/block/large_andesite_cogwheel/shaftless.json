@@ -1,0 +1,11 @@
+{
+  "parent": "block/block",
+  "ambientocclusion": false,
+  "loader": "forge:obj",
+  "flip_v": true,
+  "model": "my_addon:models/block/large_andesite_cogwheel/model_shaftless.obj",
+  "textures": {
+    "cog_main": "my_addon:block/large_andesite_cogwheel",
+    "particle": "create:block/andesite_block"
+  }
+}

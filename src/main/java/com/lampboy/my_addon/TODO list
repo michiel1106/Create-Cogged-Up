@@ -1,0 +1,30 @@
+
+Make cogs to be immediately updated when neighboring block updates [v]
+
+Crafting recipe []
+
+Encased cog variants []
+
+Mining time (block hardness) []
+
+Loot table []
+
+Vintage hand crank, analog lever []
+
+----------------
+
+Higher tier cog advantages:
+It reduces overall stress impact by its factor.
+
+reduction of stress impact will be measured by ratio of cogs
+for example:
+if 30% of cogs are andesite, and 50% of cogs are brass, and the rest is wood
+then: Stress reduction factor = (2)*30% + (1.7)*50% + 1*20%
+The network stress will be = (Network Stress)/(Stress reduction factor)
+
+Stress reduction factor when 100% of cogs are following:
+wooden(default): impact/1
+andesite: impact/2
+brass: impact/1.7
+copper: impact/1.5
+ind.iron: impact/4

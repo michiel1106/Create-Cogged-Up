@@ -1,0 +1,17 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "my_addon:block/large_copper_cogwheel/block",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "my_addon:block/large_copper_cogwheel/block"
+    },
+    "axis=z": {
+      "model": "my_addon:block/large_copper_cogwheel/block",
+      "x": 90,
+      "y": 180
+    }
+  }
+}

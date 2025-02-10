@@ -1,0 +1,5 @@
+# Blender 4.0.2 MTL File: 'mccog.blend'
+# www.blender.org
+
+newmtl cog_large_main
+map_Kd #cog_main

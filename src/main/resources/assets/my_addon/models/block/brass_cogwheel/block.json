@@ -1,0 +1,6 @@
+{
+	"parent": "my_addon:block/brass_cogwheel/base",
+	"loader": "forge:obj",
+	"flip_v": true,
+	"model": "my_addon:models/block/custom_cogwheel.obj"
+}
