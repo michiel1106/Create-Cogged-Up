@@ -1,13 +1,13 @@
-package com.lampboy.my_addon;
+package com.lampboy.cogged_up;
 
-import com.lampboy.my_addon.content.custom_cogwheel.CustomCogwheelBE;
-import com.lampboy.my_addon.content.custom_cogwheel.CustomCogwheelBEInstance;
+import com.lampboy.cogged_up.content.custom_cogwheel.CustomCogwheelBE;
+import com.lampboy.cogged_up.content.custom_cogwheel.CustomCogwheelBEInstance;
 import com.simibubi.create.content.kinetics.simpleRelays.BracketedKineticBlockEntityRenderer;
 import com.tterrag.registrate.util.entry.BlockEntityEntry;
 
 public class AddonBETypes {
 
-    public static final BlockEntityEntry<CustomCogwheelBE> MY_LARGE_COGWHEEL_BE = MyAddon.REGISTRATE
+    public static final BlockEntityEntry<CustomCogwheelBE> MY_LARGE_COGWHEEL_BE = CoggedUp.REGISTRATE
             .blockEntity("my_large_cogwheel", CustomCogwheelBE::new)
             .instance(() -> CustomCogwheelBEInstance::new)
             .validBlocks(

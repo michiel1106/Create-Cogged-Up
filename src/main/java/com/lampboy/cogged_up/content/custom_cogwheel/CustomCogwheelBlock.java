@@ -1,6 +1,6 @@
-package com.lampboy.my_addon.content.custom_cogwheel;
+package com.lampboy.cogged_up.content.custom_cogwheel;
 
-import com.lampboy.my_addon.AddonBETypes;
+import com.lampboy.cogged_up.AddonBETypes;
 import com.simibubi.create.AllShapes;
 import com.simibubi.create.content.kinetics.base.KineticBlockEntity;
 import com.simibubi.create.content.kinetics.simpleRelays.CogWheelBlock;

@@ -1,7 +1,7 @@
-package com.lampboy.my_addon;
+package com.lampboy.cogged_up;
 
-import com.lampboy.my_addon.content.custom_cogwheel.CogwheelVariant;
-import com.lampboy.my_addon.content.custom_cogwheel.CustomCogwheelBlock;
+import com.lampboy.cogged_up.content.custom_cogwheel.CogwheelVariant;
+import com.lampboy.cogged_up.content.custom_cogwheel.CustomCogwheelBlock;
 import com.simibubi.create.content.kinetics.BlockStressDefaults;
 import com.simibubi.create.content.kinetics.simpleRelays.BracketedKineticBlockModel;
 import com.simibubi.create.content.kinetics.simpleRelays.CogwheelBlockItem;
@@ -19,13 +19,13 @@ import static com.simibubi.create.foundation.data.TagGen.pickaxeOnly;
 
 public class AddonBlocks {
 
-    public static final BlockEntry<Block> SAMPLE_BLOCK = MyAddon.REGISTRATE.block("sample_block", Block::new)
+    public static final BlockEntry<Block> SAMPLE_BLOCK = CoggedUp.REGISTRATE.block("sample_block", Block::new)
             .initialProperties(() -> Blocks.STONE)
             .item()
             .build()
             .register();
 
-    public static final BlockEntry<CustomCogwheelBlock> ANDESITE_COGWHEEL = MyAddon.REGISTRATE.block("andesite_cogwheel", (p) -> new CustomCogwheelBlock(false, p, CogwheelVariant.ANDESITE))
+    public static final BlockEntry<CustomCogwheelBlock> ANDESITE_COGWHEEL = CoggedUp.REGISTRATE.block("andesite_cogwheel", (p) -> new CustomCogwheelBlock(false, p, CogwheelVariant.ANDESITE))
             .initialProperties(SharedProperties::stone)
             .properties(p -> p.sound(SoundType.STONE).mapColor(MapColor.STONE))
             .transform(BlockStressDefaults.setNoImpact())
@@ -37,7 +37,7 @@ public class AddonBlocks {
             .build()
             .register();
 
-    public static final BlockEntry<CustomCogwheelBlock> LARGE_ANDESITE_COGWHEEL = MyAddon.REGISTRATE.block("large_andesite_cogwheel", (p) -> new CustomCogwheelBlock(true, p, CogwheelVariant.ANDESITE))
+    public static final BlockEntry<CustomCogwheelBlock> LARGE_ANDESITE_COGWHEEL = CoggedUp.REGISTRATE.block("large_andesite_cogwheel", (p) -> new CustomCogwheelBlock(true, p, CogwheelVariant.ANDESITE))
             .initialProperties(SharedProperties::stone)
             .properties(p -> p.sound(SoundType.STONE).mapColor(MapColor.STONE))
             .transform(BlockStressDefaults.setNoImpact())
@@ -48,7 +48,7 @@ public class AddonBlocks {
             .build()
             .register();
 
-    public static final BlockEntry<CustomCogwheelBlock> BRASS_COGWHEEL = MyAddon.REGISTRATE.block("brass_cogwheel", (p) -> new CustomCogwheelBlock(false, p, CogwheelVariant.BRASS))
+    public static final BlockEntry<CustomCogwheelBlock> BRASS_COGWHEEL = CoggedUp.REGISTRATE.block("brass_cogwheel", (p) -> new CustomCogwheelBlock(false, p, CogwheelVariant.BRASS))
             .initialProperties(SharedProperties::softMetal)
             .properties(p -> p.mapColor(MapColor.STONE))
             .transform(BlockStressDefaults.setNoImpact())
@@ -59,7 +59,7 @@ public class AddonBlocks {
             .build()
             .register();
 
-    public static final BlockEntry<CustomCogwheelBlock> LARGE_BRASS_COGWHEEL = MyAddon.REGISTRATE.block("large_brass_cogwheel", (p) -> new CustomCogwheelBlock(true, p, CogwheelVariant.BRASS))
+    public static final BlockEntry<CustomCogwheelBlock> LARGE_BRASS_COGWHEEL = CoggedUp.REGISTRATE.block("large_brass_cogwheel", (p) -> new CustomCogwheelBlock(true, p, CogwheelVariant.BRASS))
             .initialProperties(SharedProperties::softMetal)
             .properties(p -> p.mapColor(MapColor.STONE))
             .transform(BlockStressDefaults.setNoImpact())
@@ -70,7 +70,7 @@ public class AddonBlocks {
             .build()
             .register();
 
-    public static final BlockEntry<CustomCogwheelBlock> COPPER_COGWHEEL = MyAddon.REGISTRATE.block("copper_cogwheel", (p) -> new CustomCogwheelBlock(false, p, CogwheelVariant.COPPER))
+    public static final BlockEntry<CustomCogwheelBlock> COPPER_COGWHEEL = CoggedUp.REGISTRATE.block("copper_cogwheel", (p) -> new CustomCogwheelBlock(false, p, CogwheelVariant.COPPER))
             .initialProperties(SharedProperties::copperMetal)
             .properties(p -> p.mapColor(MapColor.STONE))
             .transform(BlockStressDefaults.setNoImpact())
@@ -81,7 +81,7 @@ public class AddonBlocks {
             .build()
             .register();
 
-    public static final BlockEntry<CustomCogwheelBlock> LARGE_COPPER_COGWHEEL = MyAddon.REGISTRATE.block("large_copper_cogwheel", (p) -> new CustomCogwheelBlock(true, p, CogwheelVariant.COPPER))
+    public static final BlockEntry<CustomCogwheelBlock> LARGE_COPPER_COGWHEEL = CoggedUp.REGISTRATE.block("large_copper_cogwheel", (p) -> new CustomCogwheelBlock(true, p, CogwheelVariant.COPPER))
             .initialProperties(SharedProperties::copperMetal)
             .properties(p -> p.mapColor(MapColor.DIRT))
             .transform(BlockStressDefaults.setNoImpact())
@@ -92,7 +92,7 @@ public class AddonBlocks {
             .build()
             .register();
 
-    public static final BlockEntry<CustomCogwheelBlock> INDUSTRIAL_IRON_COGWHEEL = MyAddon.REGISTRATE.block("industrial_iron_cogwheel", (p) -> new CustomCogwheelBlock(false, p, CogwheelVariant.INDUSTRIAL_IRON))
+    public static final BlockEntry<CustomCogwheelBlock> INDUSTRIAL_IRON_COGWHEEL = CoggedUp.REGISTRATE.block("industrial_iron_cogwheel", (p) -> new CustomCogwheelBlock(false, p, CogwheelVariant.INDUSTRIAL_IRON))
             .initialProperties(SharedProperties::netheriteMetal)
             .properties(p -> p.mapColor(MapColor.STONE))
             .transform(BlockStressDefaults.setNoImpact())
@@ -103,7 +103,7 @@ public class AddonBlocks {
             .build()
             .register();
 
-    public static final BlockEntry<CustomCogwheelBlock> LARGE_INDUSTRIAL_IRON_COGWHEEL = MyAddon.REGISTRATE.block("large_industrial_iron_cogwheel", (p) -> new CustomCogwheelBlock(true, p, CogwheelVariant.INDUSTRIAL_IRON))
+    public static final BlockEntry<CustomCogwheelBlock> LARGE_INDUSTRIAL_IRON_COGWHEEL = CoggedUp.REGISTRATE.block("large_industrial_iron_cogwheel", (p) -> new CustomCogwheelBlock(true, p, CogwheelVariant.INDUSTRIAL_IRON))
             .initialProperties(SharedProperties::netheriteMetal)
             .properties(p -> p.mapColor(MapColor.DIRT))
             .transform(BlockStressDefaults.setNoImpact())
@@ -115,6 +115,6 @@ public class AddonBlocks {
             .register();
 
     public static void register() {
-        MyAddon.LOGGER.info("Blocks have been registered!");
+        CoggedUp.LOGGER.info("Blocks have been registered!");
     }
 }

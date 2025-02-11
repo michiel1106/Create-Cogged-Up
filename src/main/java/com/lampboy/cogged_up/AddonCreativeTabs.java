@@ -1,4 +1,4 @@
-package com.lampboy.my_addon;
+package com.lampboy.cogged_up;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -10,12 +10,12 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
 public class AddonCreativeTabs {
-    public static final DeferredRegister<CreativeModeTab> TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MyAddon.ADDON_ID);
+    public static final DeferredRegister<CreativeModeTab> TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, CoggedUp.ADDON_ID);
 
     public static final RegistryObject<CreativeModeTab> BASE_TAB = TABS.register("base",
             () -> CreativeModeTab.builder()
                     .withTabsBefore(CreativeModeTabs.SPAWN_EGGS)
-                    .title(Component.literal("Create: Mechanical Aesthetics"))
+                    .title(Component.literal("Create: Cogged Up"))
                     .icon(() -> new ItemStack(AddonBlocks.ANDESITE_COGWHEEL))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(AddonBlocks.ANDESITE_COGWHEEL.get());

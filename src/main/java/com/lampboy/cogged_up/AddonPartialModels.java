@@ -1,4 +1,4 @@
-package com.lampboy.my_addon;
+package com.lampboy.cogged_up;
 
 import com.jozufozu.flywheel.core.PartialModel;
 
@@ -12,7 +12,7 @@ public class AddonPartialModels {
     LARGE_INDUSTRIAL_IRON_COGWHEEL_SHAFTLESS = block("large_industrial_iron_cogwheel/shaftless");
 
     private static PartialModel block(String path) {
-        return new PartialModel(MyAddon.asResource("block/"+path));
+        return new PartialModel(CoggedUp.asResource("block/"+path));
     }
 
     public static void register() {}

@@ -1,4 +1,4 @@
-package com.lampboy.my_addon;
+package com.lampboy.cogged_up;
 
 import com.mojang.logging.LogUtils;
 import com.simibubi.create.foundation.data.CreateRegistrate;
@@ -9,8 +9,8 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
-@Mod(MyAddon.ADDON_ID)
-public class MyAddon {
+@Mod(CoggedUp.ADDON_ID)
+public class CoggedUp {
     public static final String ADDON_ID = "my_addon";
 
     public static final Logger LOGGER = LogUtils.getLogger();
@@ -21,7 +21,7 @@ public class MyAddon {
         return new ResourceLocation(ADDON_ID, path);
     };
 
-    public MyAddon() {
+    public CoggedUp() {
         onInit();
     }
 

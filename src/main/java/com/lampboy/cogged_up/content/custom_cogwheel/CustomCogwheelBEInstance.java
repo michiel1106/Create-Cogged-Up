@@ -1,11 +1,11 @@
-package com.lampboy.my_addon.content.custom_cogwheel;
+package com.lampboy.cogged_up.content.custom_cogwheel;
 
 import com.jozufozu.flywheel.api.Instancer;
 import com.jozufozu.flywheel.api.Material;
 import com.jozufozu.flywheel.api.MaterialManager;
 import com.jozufozu.flywheel.core.PartialModel;
 import com.jozufozu.flywheel.util.transform.TransformStack;
-import com.lampboy.my_addon.AddonPartialModels;
+import com.lampboy.cogged_up.AddonPartialModels;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import com.simibubi.create.AllPartialModels;
