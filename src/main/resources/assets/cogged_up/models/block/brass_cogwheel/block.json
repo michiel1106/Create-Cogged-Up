@@ -1,0 +1,6 @@
+{
+	"parent": "cogged_up:block/brass_cogwheel/base",
+	"loader": "forge:obj",
+	"flip_v": true,
+	"model": "cogged_up:models/block/custom_cogwheel.obj"
+}

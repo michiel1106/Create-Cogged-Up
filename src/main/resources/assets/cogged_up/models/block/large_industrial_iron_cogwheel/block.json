@@ -1,0 +1,13 @@
+{
+  "parent": "create:block/large_wheels",
+  "loader": "forge:obj",
+  "flip_v": true,
+  "model": "cogged_up:models/block/large_industrial_iron_cogwheel/model.obj",
+  "ambientocclusion": false,
+  "textures": {
+    "large_industrial_iron_cogwheel": "cogged_up:block/large_industrial_iron_cogwheel",
+    "shaft_side": "create:block/axis",
+    "shaft_top": "create:block/axis_top",
+    "particle": "create:block/industrial_iron_block"
+  }
+}

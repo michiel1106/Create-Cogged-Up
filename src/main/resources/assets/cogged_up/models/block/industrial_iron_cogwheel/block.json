@@ -1,0 +1,25 @@
+{
+  "parent": "block/block",
+  "loader": "forge:obj",
+  "flip_v": true,
+  "model": "cogged_up:models/block/industrial_iron_cogwheel/model.obj",
+  "ambientocclusion": false,
+  "textures": {
+    "cog_main": "cogged_up:block/industrial_iron_cogwheel",
+    "shaft_side": "create:block/axis",
+    "shaft_top": "create:block/axis_top",
+    "particle": "create:block/industrial_iron_block"
+  },
+  "display": {
+    "gui": {
+      "rotation": [ 30, 225, 0 ],
+      "translation": [ 0, 0, 0],
+      "scale":[ 0.5, 0.5, 0.5 ]
+    },
+    "fixed": {
+      "rotation": [ 90, 0, 0 ],
+      "translation": [ 0, 0, 0],
+      "scale":[ 0.5, 0.5, 0.5 ]
+    }
+  }
+}

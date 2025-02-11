@@ -1,0 +1,18 @@
+{
+  "parent": "cogged_up:block/andesite_cogwheel/base",
+  "loader": "forge:obj",
+  "flip_v": true,
+  "model": "cogged_up:models/block/custom_cogwheel.obj",
+  "display": {
+    "gui": {
+      "rotation": [ 30, 225, 0 ],
+      "translation": [ 0, 0, 0],
+      "scale":[ 0.5, 0.5, 0.5 ]
+    },
+    "fixed": {
+      "rotation": [ 90, 0, 0 ],
+      "translation": [ 0, 0, 0],
+      "scale":[ 0.5, 0.5, 0.5 ]
+    }
+  }
+}

@@ -11,7 +11,7 @@ import org.slf4j.Logger;
 
 @Mod(CoggedUp.ADDON_ID)
 public class CoggedUp {
-    public static final String ADDON_ID = "my_addon";
+    public static final String ADDON_ID = "cogged_up";
 
     public static final Logger LOGGER = LogUtils.getLogger();
 

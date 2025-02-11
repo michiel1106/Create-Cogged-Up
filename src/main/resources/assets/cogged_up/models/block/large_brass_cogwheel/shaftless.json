@@ -1,0 +1,6 @@
+{
+  "parent": "cogged_up:block/large_brass_cogwheel/base",
+  "loader": "forge:obj",
+  "flip_v": true,
+  "model": "cogged_up:models/block/large_brass_cogwheel/shaftless.obj"
+}

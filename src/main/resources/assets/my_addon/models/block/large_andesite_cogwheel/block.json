@@ -1,6 +1,0 @@
-{
-	"parent": "my_addon:block/large_andesite_cogwheel/base",
-	"loader": "forge:obj",
-	"flip_v": true,
-	"model": "my_addon:models/block/large_andesite_cogwheel/model.obj"
-}

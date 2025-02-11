@@ -1,0 +1,10 @@
+{
+	"parent": "block/block",
+	"ambientocclusion": false,
+	"textures": {
+		"cog_main": "cogged_up:block/andesite_cogwheel",
+		"shaft_side": "create:block/axis",
+		"shaft_top": "create:block/axis_top",
+		"particle": "create:block/andesite_block"
+	}
+}

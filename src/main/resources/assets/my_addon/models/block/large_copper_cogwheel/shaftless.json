@@ -1,9 +1,0 @@
-{
-  "parent": "block/block",
-  "loader": "forge:obj",
-  "flip_v": true,
-  "model": "my_addon:models/block/large_copper_cogwheel/shaftless.obj",
-  "textures": {
-    "large_copper_cogwheel": "my_addon:block/large_copper_cogwheel"
-  }
-}
