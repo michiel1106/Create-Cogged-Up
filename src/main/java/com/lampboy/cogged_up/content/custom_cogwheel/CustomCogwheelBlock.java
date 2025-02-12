@@ -36,18 +36,18 @@ public class CustomCogwheelBlock extends CogWheelBlock {
         return AddonBETypes.MY_LARGE_COGWHEEL_BE.get();
     }
 
-    @Override
-    public InteractionResult use(BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult ray) {
-        BlockEntity be = getBlockEntity(world, pos);
-
-//        if (world.isClientSide) return InteractionResult.FAIL;
+//    @Override
+//    public InteractionResult use(BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult ray) {
+//        BlockEntity be = getBlockEntity(world, pos);
+//
+//        if (world.isClientSide) return super.use(state, world, pos, player, hand, ray);
 //
 //        if (be instanceof CustomCogwheelBE) {
 //            ((CustomCogwheelBE) be).printNetwork();
 //        }
-
-        return super.use(state, world, pos, player, hand, ray);
-    }
+//
+//        return InteractionResult.SUCCESS;
+//    }
 
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter worldIn, BlockPos pos, CollisionContext context) {

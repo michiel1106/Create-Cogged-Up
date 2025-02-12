@@ -25,6 +25,8 @@ public class CustomCogwheelBE extends BracketedKineticBlockEntity {
 
         KineticNetwork network = getOrCreateNetwork();
 
+        if (network == null) return;
+
         level.players().get(0).sendSystemMessage(Component.literal(
                 "Current network size:" + network.getSize()
                 + "\n Current network stress impact:" + network.calculateStress()
