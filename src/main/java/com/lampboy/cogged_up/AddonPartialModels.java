@@ -6,6 +6,8 @@ public class AddonPartialModels {
 
     public static final PartialModel
 
+    ANDESITE_COGWHEEL_SHAFTLESS = block("andesite_cogwheel/shaftless"),
+
     LARGE_ANDESITE_COGWHEEL_SHAFTLESS = block("large_andesite_cogwheel/shaftless"),
     LARGE_BRASS_COGWHEEL_SHAFTLESS = block("large_brass_cogwheel/shaftless"),
     LARGE_COPPER_COGWHEEL_SHAFTLESS = block("large_copper_cogwheel/shaftless"),

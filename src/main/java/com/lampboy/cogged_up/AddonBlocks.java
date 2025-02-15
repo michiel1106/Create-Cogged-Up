@@ -2,13 +2,16 @@ package com.lampboy.cogged_up;
 
 import com.lampboy.cogged_up.content.custom_cogwheel.CogwheelVariant;
 import com.lampboy.cogged_up.content.custom_cogwheel.CustomCogwheelBlock;
+import com.lampboy.cogged_up.content.custom_cogwheel.encased.CustomEncasedCogwheelBlock;
+import com.simibubi.create.AllBlocks;
+import com.simibubi.create.AllSpriteShifts;
+import com.simibubi.create.content.decoration.encasing.EncasingRegistry;
 import com.simibubi.create.content.kinetics.BlockStressDefaults;
 import com.simibubi.create.content.kinetics.simpleRelays.BracketedKineticBlockModel;
 import com.simibubi.create.content.kinetics.simpleRelays.CogwheelBlockItem;
-import com.simibubi.create.foundation.data.BlockStateGen;
-import com.simibubi.create.foundation.data.CreateRegistrate;
-import com.simibubi.create.foundation.data.SharedProperties;
-import com.simibubi.create.foundation.data.TagGen;
+import com.simibubi.create.content.kinetics.simpleRelays.encased.EncasedCogCTBehaviour;
+import com.simibubi.create.foundation.data.*;
+import com.simibubi.create.foundation.utility.Couple;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -112,6 +115,17 @@ public class AddonBlocks {
             .onRegister(CreateRegistrate.blockModel(() -> BracketedKineticBlockModel::new))
             .item(CogwheelBlockItem::new)
             .build()
+            .register();
+
+    //Encased Variants:
+
+    public static final BlockEntry<CustomEncasedCogwheelBlock> ANDESITE_ENCASED_ANDESITE_COGWHEEL = CoggedUp.REGISTRATE.block
+            ("andesite_encased_andesite_cogwheel", p -> new CustomEncasedCogwheelBlock(p, false, AllBlocks.ANDESITE_CASING::get))
+            .transform(EncasingRegistry.addVariantTo(AddonBlocks.ANDESITE_COGWHEEL))
+            .transform(BuilderTransformers.encasedCogwheel("andesite", () -> AllSpriteShifts.ANDESITE_CASING))
+            .onRegister(CreateRegistrate.connectedTextures(() -> new EncasedCogCTBehaviour(AllSpriteShifts.ANDESITE_CASING,
+                    Couple.create(AllSpriteShifts.ANDESITE_ENCASED_COGWHEEL_SIDE,
+                            AllSpriteShifts.ANDESITE_ENCASED_COGWHEEL_OTHERSIDE))))
             .register();
 
     public static void register() {

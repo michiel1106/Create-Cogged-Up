@@ -1,0 +1,10 @@
+{
+	"parent": "block/block",
+	"loader": "forge:obj",
+	"flip_v": true,
+	"model": "cogged_up:models/block/custom_cogwheel_shaftless.obj",
+	"ambientocclusion": false,
+	"textures": {
+		"cog_main": "cogged_up:block/andesite_cogwheel"
+	}
+}

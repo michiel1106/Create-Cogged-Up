@@ -1,6 +1,5 @@
 package com.lampboy.cogged_up.mixin.create;
 
-import com.lampboy.cogged_up.content.custom_cogwheel.CustomCogwheelBE;
 import com.lampboy.cogged_up.content.custom_cogwheel.CustomCogwheelBlock;
 import com.simibubi.create.AllBlocks;
 import com.simibubi.create.content.kinetics.KineticNetwork;

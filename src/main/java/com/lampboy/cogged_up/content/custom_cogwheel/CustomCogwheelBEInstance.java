@@ -12,6 +12,7 @@ import com.simibubi.create.AllPartialModels;
 import com.simibubi.create.content.kinetics.base.KineticBlockEntityRenderer;
 import com.simibubi.create.content.kinetics.base.SingleRotatingInstance;
 import com.simibubi.create.content.kinetics.base.flwdata.RotatingData;
+import com.simibubi.create.content.kinetics.simpleRelays.BracketedKineticBlockEntity;
 import com.simibubi.create.content.kinetics.simpleRelays.BracketedKineticBlockEntityRenderer;
 import com.simibubi.create.content.kinetics.simpleRelays.ICogWheel;
 import com.simibubi.create.foundation.render.AllMaterialSpecs;
@@ -19,11 +20,14 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.block.Block;
 
-public class CustomCogwheelBEInstance extends SingleRotatingInstance<CustomCogwheelBE> {
-    public CustomCogwheelBEInstance(MaterialManager materialManager, CustomCogwheelBE blockEntity) {
+public class CustomCogwheelBEInstance extends SingleRotatingInstance<BracketedKineticBlockEntity> {
+    public CustomCogwheelBEInstance(MaterialManager materialManager, BracketedKineticBlockEntity blockEntity) {
         super(materialManager, blockEntity);
     }
 
+    /**
+     * Methods are copied and modified from {@link com.simibubi.create.content.kinetics.simpleRelays.BracketedKineticBlockEntityInstance}
+     * */
     protected RotatingData additionalShaft;
 
     @Override

@@ -1,6 +1,10 @@
 {
-  "parent": "cogged_up:block/large_brass_cogwheel/base",
+  "parent": "block/block",
   "loader": "forge:obj",
   "flip_v": true,
-  "model": "cogged_up:models/block/large_brass_cogwheel/shaftless.obj"
+  "model": "cogged_up:models/block/large_brass_cogwheel/shaftless.obj",
+  "textures": {
+    "large_brass_cog_main": "cogged_up:block/large_brass_cogwheel",
+    "particle": "create:block/brass_block"
+  }
 }

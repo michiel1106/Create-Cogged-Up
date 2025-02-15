@@ -1,6 +1,6 @@
 # Blender 4.0.2
 # www.blender.org
-mtllib model_shaftless.mtl
+mtllib shaftless.mtl
 o cog_large_shaftless_joinned
 v 0.312500 0.281250 0.312500
 v 0.312500 0.281250 0.687500
