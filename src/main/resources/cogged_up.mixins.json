@@ -4,8 +4,7 @@
   "package": "com.lampboy.cogged_up.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "create.KineticNetworkMixin",
-    "minecraft.BlockItemMixin"
+    "create.KineticNetworkMixin"
   ],
   "client": [],
   "server": [],

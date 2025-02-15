@@ -1,6 +1,7 @@
 package com.lampboy.cogged_up;
 
 import com.mojang.logging.LogUtils;
+import com.simibubi.create.AllBlocks;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
