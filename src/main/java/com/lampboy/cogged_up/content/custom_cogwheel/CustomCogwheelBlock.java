@@ -5,8 +5,11 @@ import com.simibubi.create.AllShapes;
 import com.simibubi.create.content.decoration.encasing.EncasableBlock;
 import com.simibubi.create.content.kinetics.base.KineticBlockEntity;
 import com.simibubi.create.content.kinetics.simpleRelays.CogWheelBlock;
+import net.minecraft.client.gui.font.providers.UnihexProvider;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.server.MinecraftServer;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -17,11 +20,12 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.storage.DimensionDataStorage;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-public class CustomCogwheelBlock extends CogWheelBlock {
+public class CustomCogwheelBlock extends CogWheelBlock implements IHasMaterial {
     public CogwheelVariant material;
 
     public CustomCogwheelBlock(boolean large, Properties properties, CogwheelVariant material) {
@@ -29,6 +33,7 @@ public class CustomCogwheelBlock extends CogWheelBlock {
         this.material = material;
     }
 
+    @Override
     public CogwheelVariant getMaterial() {
         return material;
     }

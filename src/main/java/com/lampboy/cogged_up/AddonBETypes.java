@@ -1,9 +1,7 @@
 package com.lampboy.cogged_up;
 
 import com.lampboy.cogged_up.content.custom_cogwheel.CustomCogwheelBEInstance;
-import com.lampboy.cogged_up.content.custom_cogwheel.encased.CustomEncasedCogwheelBE;
 import com.lampboy.cogged_up.content.custom_cogwheel.encased.CustomEncasedCogwheelBEInstance;
-import com.lampboy.cogged_up.content.custom_cogwheel.encased.CustomEncasedCogwheelBlock;
 import com.simibubi.create.content.kinetics.simpleRelays.BracketedKineticBlockEntity;
 import com.simibubi.create.content.kinetics.simpleRelays.BracketedKineticBlockEntityRenderer;
 import com.simibubi.create.content.kinetics.simpleRelays.SimpleKineticBlockEntity;
@@ -29,9 +27,28 @@ public class AddonBETypes {
 
     public static final BlockEntityEntry<SimpleKineticBlockEntity> CUSTOM_ENCASED_COGWHEEL_BE = CoggedUp.REGISTRATE
             .blockEntity("custom_encased_cogwheel", SimpleKineticBlockEntity::new)
-            .instance(() -> (manager, be) -> new CustomEncasedCogwheelBEInstance(manager, be, false))
+            .instance(() -> CustomEncasedCogwheelBEInstance::new)
             .validBlocks(
-                    AddonBlocks.ANDESITE_ENCASED_ANDESITE_COGWHEEL
+                    AddonBlocks.ANDESITE_ENCASED_ANDESITE_COGWHEEL,
+                    AddonBlocks.ANDESITE_ENCASED_LARGE_ANDESITE_COGWHEEL,
+                    AddonBlocks.ANDESITE_ENCASED_BRASS_COGWHEEL,
+                    AddonBlocks.ANDESITE_ENCASED_LARGE_BRASS_COGWHEEL,
+                    AddonBlocks.ANDESITE_ENCASED_COPPER_COGWHEEL,
+                    AddonBlocks.ANDESITE_ENCASED_LARGE_COPPER_COGWHEEL,
+
+                    AddonBlocks.BRASS_ENCASED_ANDESITE_COGWHEEL,
+                    AddonBlocks.BRASS_ENCASED_LARGE_ANDESITE_COGWHEEL,
+                    AddonBlocks.BRASS_ENCASED_BRASS_COGWHEEL,
+                    AddonBlocks.BRASS_ENCASED_LARGE_BRASS_COGWHEEL,
+                    AddonBlocks.BRASS_ENCASED_COPPER_COGWHEEL,
+                    AddonBlocks.BRASS_ENCASED_LARGE_COPPER_COGWHEEL,
+
+                    AddonBlocks.COPPER_ENCASED_ANDESITE_COGWHEEL,
+                    AddonBlocks.COPPER_ENCASED_LARGE_ANDESITE_COGWHEEL,
+                    AddonBlocks.COPPER_ENCASED_BRASS_COGWHEEL,
+                    AddonBlocks.COPPER_ENCASED_LARGE_BRASS_COGWHEEL,
+                    AddonBlocks.COPPER_ENCASED_COPPER_COGWHEEL,
+                    AddonBlocks.COPPER_ENCASED_LARGE_COPPER_COGWHEEL
             )
             .register();
 

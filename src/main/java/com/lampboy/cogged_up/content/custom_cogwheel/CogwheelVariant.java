@@ -6,7 +6,7 @@ public enum CogwheelVariant {
     COPPER(3),
     INDUSTRIAL_IRON(6);
 
-    public final float stressReductionFactor;
+    public float stressReductionFactor;
 
     CogwheelVariant(float stressReductionFactor) {
         this.stressReductionFactor = stressReductionFactor;

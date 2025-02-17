@@ -65,6 +65,7 @@ public class CustomCogwheelBEInstance extends SingleRotatingInstance<BracketedKi
 
         Block block = blockEntity.getBlockState().getBlock();
 
+        //Gets default cogwheel model in case the instance is different
         if (!(block instanceof CustomCogwheelBlock)) {
             return getRotatingMaterial()
                     .getModel(AllPartialModels.SHAFTLESS_LARGE_COGWHEEL, blockState, facing, () -> this.rotateToAxis(axis));

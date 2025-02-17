@@ -1,12 +1,14 @@
 package com.lampboy.cogged_up.mixin.create;
 
 import com.lampboy.cogged_up.content.custom_cogwheel.CustomCogwheelBlock;
+import com.lampboy.cogged_up.content.custom_cogwheel.IHasMaterial;
 import com.simibubi.create.AllBlocks;
 import com.simibubi.create.content.kinetics.KineticNetwork;
 import com.simibubi.create.content.kinetics.base.KineticBlockEntity;
 import com.simibubi.create.content.kinetics.simpleRelays.BracketedKineticBlockEntity;
 import com.simibubi.create.content.kinetics.simpleRelays.CogWheelBlock;
 import com.simibubi.create.content.kinetics.simpleRelays.ICogWheel;
+import com.simibubi.create.content.kinetics.simpleRelays.encased.EncasedCogwheelBlock;
 import com.simibubi.create.foundation.utility.Iterate;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -37,42 +39,40 @@ public class KineticNetworkMixin {
      * */
     @Inject(at = @At("TAIL"), method = "calculateStress", remap = false, cancellable = true)
     private void coggedUp$calculateStress(CallbackInfoReturnable<Float> cir) {
-        if (cir.getReturnValue() == 0.0f) {
-            return;
-        }
+        if (cir.getReturnValue() == 0.0f) return;
 
         float totalStressReductionFactor = 0;
-        List<CogWheelBlock> cogList = new ArrayList<>();
+        List<Object> cogList = new ArrayList<>();
 
         for (Map.Entry<KineticBlockEntity, Float> entry : this.members.entrySet()) {
             KineticBlockEntity be = entry.getKey();
             Block block = be.getBlockState().getBlock();
 
-            if (!(block instanceof CogWheelBlock)) continue;
-
 //            if (isDecorativeCog(((BracketedKineticBlockEntity) be))) continue;
 
-            cogList.add(((CogWheelBlock) block));
+            if ((block instanceof CogWheelBlock) || (block instanceof EncasedCogwheelBlock)) {
+                cogList.add(block);
+            }
         }
 
-        for (CogWheelBlock block : cogList) {
+        if (cogList.isEmpty()) return;
+
+        for (Object block : cogList) {
             int size = cogList.size();
 
-            if (!(block instanceof CustomCogwheelBlock)) {
-                totalStressReductionFactor += (float) 1 /size;
+            if (block instanceof IHasMaterial hasMaterial) {
+                totalStressReductionFactor +=
+                        hasMaterial.getMaterial().stressReductionFactor/size;
                 continue;
             }
 
-            totalStressReductionFactor += ((CustomCogwheelBlock) block)
-                    .getMaterial().stressReductionFactor/size;
+            totalStressReductionFactor += (float) 1 /size;
         }
 
         //Rounds number in case of float point precision issue.
         cir.setReturnValue(
                 ((float) (Math.floor((cir.getReturnValue() / totalStressReductionFactor) * 100) / 100))
         );
-
-        System.out.println(cir.getReturnValue());
     }
 
     //it sorts out cogwheel that are not connected to any cogwheels.

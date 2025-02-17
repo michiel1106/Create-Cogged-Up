@@ -2,10 +2,13 @@ package com.lampboy.cogged_up.content.custom_cogwheel.encased;
 
 import com.jozufozu.flywheel.api.InstanceData;
 import com.jozufozu.flywheel.api.Instancer;
+import com.jozufozu.flywheel.api.Material;
 import com.jozufozu.flywheel.api.MaterialManager;
 import com.jozufozu.flywheel.core.PartialModel;
 import com.jozufozu.flywheel.util.transform.TransformStack;
 import com.lampboy.cogged_up.AddonPartialModels;
+import com.lampboy.cogged_up.content.custom_cogwheel.CogwheelVariant;
+import com.lampboy.cogged_up.content.custom_cogwheel.CustomCogwheelBlock;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import com.simibubi.create.AllPartialModels;
@@ -14,7 +17,9 @@ import com.simibubi.create.content.kinetics.base.KineticBlockEntity;
 import com.simibubi.create.content.kinetics.base.KineticBlockEntityInstance;
 import com.simibubi.create.content.kinetics.base.flwdata.RotatingData;
 import com.simibubi.create.content.kinetics.simpleRelays.BracketedKineticBlockEntityRenderer;
+import com.simibubi.create.content.kinetics.simpleRelays.ICogWheel;
 import com.simibubi.create.content.kinetics.simpleRelays.encased.EncasedCogInstance;
+import com.simibubi.create.foundation.render.AllMaterialSpecs;
 import com.simibubi.create.foundation.utility.Iterate;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.block.Block;
@@ -24,12 +29,23 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import java.util.Optional;
 
 public class CustomEncasedCogwheelBEInstance extends KineticBlockEntityInstance<KineticBlockEntity> {
-    public CustomEncasedCogwheelBEInstance(MaterialManager materialManager, KineticBlockEntity blockEntity, boolean large) {
+    public CustomEncasedCogwheelBEInstance(MaterialManager materialManager, KineticBlockEntity blockEntity) {
         super(materialManager, blockEntity);
-        this.large = large;
+
+        Block block = blockEntity.getBlockState().getBlock();
+
+        if (!(block instanceof CustomEncasedCogwheelBlock encasedCog)) {
+            this.large = false;
+            this.material = CogwheelVariant.ANDESITE;
+            return;
+        }
+
+        this.large = encasedCog.isLargeCog();
+        this.material = encasedCog.getMaterial();
     }
 
-    private boolean large;
+    private final boolean large;
+    private final CogwheelVariant material;
 
     protected RotatingData rotatingModel;
     protected Optional<RotatingData> rotatingTopShaft;
@@ -65,9 +81,27 @@ public class CustomEncasedCogwheelBEInstance extends KineticBlockEntityInstance<
         BlockState referenceState = blockEntity.getBlockState();
         Direction facing =
                 Direction.fromAxisAndDirection(referenceState.getValue(BlockStateProperties.AXIS), Direction.AxisDirection.POSITIVE);
-        PartialModel partial = large ? AllPartialModels.SHAFTLESS_LARGE_COGWHEEL : AddonPartialModels.ANDESITE_COGWHEEL_SHAFTLESS;
 
-        return getRotatingMaterial().getModel(partial, referenceState, facing, () -> {
+        PartialModel partial = AllPartialModels.SHAFTLESS_COGWHEEL;
+        Material<RotatingData> rotatingMaterial = materialManager.defaultSolid().material(AllMaterialSpecs.ROTATING);
+
+        switch (material) {
+            case ANDESITE -> partial = large
+                    ? AddonPartialModels.LARGE_ANDESITE_COGWHEEL_SHAFTLESS
+                    : AddonPartialModels.ANDESITE_COGWHEEL_SHAFTLESS;
+            case BRASS -> partial = large
+                    ? AddonPartialModels.LARGE_BRASS_COGWHEEL_SHAFTLESS
+                    : AddonPartialModels.BRASS_COGWHEEL_SHAFTLESS;
+            case COPPER -> {
+                rotatingMaterial = materialManager.defaultCutout()
+                        .material(AllMaterialSpecs.ROTATING);
+                partial = large
+                        ? AddonPartialModels.LARGE_COPPER_COGWHEEL_SHAFTLESS
+                        : AddonPartialModels.COPPER_COGWHEEL_SHAFTLESS;
+            }
+        }
+
+        return rotatingMaterial.getModel(partial, referenceState, facing, () -> {
             PoseStack poseStack = new PoseStack();
             TransformStack.cast(poseStack)
                     .centre()
