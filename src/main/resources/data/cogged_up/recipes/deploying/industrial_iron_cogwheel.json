@@ -1,0 +1,14 @@
+{
+  "type": "create:deploying",
+  "ingredients": [
+    {
+      "item": "create:shaft"
+    },
+    {
+      "item": "minecraft:iron_ingot"
+    }
+  ],
+  "result": {
+    "item": "cogged_up:industrial_iron_cogwheel"
+  }
+}

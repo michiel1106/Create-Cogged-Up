@@ -1,0 +1,14 @@
+{
+  "type": "create:deploying",
+  "ingredients": [
+    {
+      "item": "create:shaft"
+    },
+    {
+      "item": "create:brass_ingot"
+    }
+  ],
+  "result": {
+    "item": "cogged_up:brass_cogwheel"
+  }
+}

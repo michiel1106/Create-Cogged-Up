@@ -1,0 +1,14 @@
+{
+  "type": "create:deploying",
+  "ingredients": [
+    {
+      "item": "cogged_up:brass_cogwheel"
+    },
+    {
+      "item": "create:brass_ingot"
+    }
+  ],
+  "result": {
+    "item": "cogged_up:large_brass_cogwheel"
+  }
+}

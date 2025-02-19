@@ -1,0 +1,14 @@
+{
+  "type": "create:deploying",
+  "ingredients": [
+    {
+      "item": "cogged_up:copper_cogwheel"
+    },
+    {
+      "item": "minecraft:copper_ingot"
+    }
+  ],
+  "result": {
+    "item": "cogged_up:large_copper_cogwheel"
+  }
+}
