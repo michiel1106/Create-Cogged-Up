@@ -40,6 +40,7 @@ public class CustomEncasedCogwheelBEInstance extends KineticBlockEntityInstance<
             return;
         }
 
+        //sets material as default in case it doesn't have material for some reason.
         material = CogwheelVariant.DEFAULT;
     }
 
@@ -87,25 +88,6 @@ public class CustomEncasedCogwheelBEInstance extends KineticBlockEntityInstance<
         Material<RotatingData> rotatingMaterial = material == CogwheelVariant.COPPER
                 ? materialManager.defaultCutout().material(AllMaterialSpecs.ROTATING)
                 : materialManager.defaultSolid().material(AllMaterialSpecs.ROTATING);
-
-//        switch (material) {
-//            case DEFAULT -> partial = large
-//                    ? AllPartialModels.SHAFTLESS_LARGE_COGWHEEL
-//                    : AllPartialModels.SHAFTLESS_COGWHEEL;
-//            case ANDESITE -> partial = large
-//                    ? CoggedUpPartialModels.LARGE_ANDESITE_COGWHEEL_SHAFTLESS
-//                    : CoggedUpPartialModels.ANDESITE_COGWHEEL_SHAFTLESS;
-//            case BRASS -> partial = large
-//                    ? CoggedUpPartialModels.LARGE_BRASS_COGWHEEL_SHAFTLESS
-//                    : CoggedUpPartialModels.BRASS_COGWHEEL_SHAFTLESS;
-//            case COPPER -> {
-//                rotatingMaterial = materialManager.defaultCutout()
-//                        .material(AllMaterialSpecs.ROTATING);
-//                partial = large
-//                        ? CoggedUpPartialModels.LARGE_COPPER_COGWHEEL_SHAFTLESS
-//                        : CoggedUpPartialModels.COPPER_COGWHEEL_SHAFTLESS;
-//            }
-//        }
 
         return rotatingMaterial.getModel(partial, referenceState, facing, () -> {
             PoseStack poseStack = new PoseStack();

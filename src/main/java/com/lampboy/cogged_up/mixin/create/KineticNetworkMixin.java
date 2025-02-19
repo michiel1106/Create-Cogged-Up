@@ -48,6 +48,7 @@ public class KineticNetworkMixin {
             KineticBlockEntity be = entry.getKey();
             Block block = be.getBlockState().getBlock();
 
+            //How did I end up thinking this is a good idea?
 //            if (isDecorativeCog(((BracketedKineticBlockEntity) be))) continue;
 
             if ((block instanceof CogWheelBlock) || (block instanceof EncasedCogwheelBlock)) {
@@ -62,7 +63,7 @@ public class KineticNetworkMixin {
 
             if (block instanceof IHasMaterial hasMaterial) {
                 totalStressReductionFactor +=
-                        hasMaterial.getMaterial().stressReductionFactor/size;
+                        hasMaterial.getMaterial().getStressReductionFactor()/size;
                 continue;
             }
 
