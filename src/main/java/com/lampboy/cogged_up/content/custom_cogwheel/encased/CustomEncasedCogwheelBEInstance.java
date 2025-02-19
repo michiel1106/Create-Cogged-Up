@@ -8,6 +8,7 @@ import com.jozufozu.flywheel.core.PartialModel;
 import com.jozufozu.flywheel.util.transform.TransformStack;
 import com.lampboy.cogged_up.CoggedUpPartialModels;
 import com.lampboy.cogged_up.content.custom_cogwheel.CogwheelVariant;
+import com.lampboy.cogged_up.content.custom_cogwheel.IHasMaterial;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import com.simibubi.create.AllPartialModels;
@@ -16,6 +17,7 @@ import com.simibubi.create.content.kinetics.base.KineticBlockEntity;
 import com.simibubi.create.content.kinetics.base.KineticBlockEntityInstance;
 import com.simibubi.create.content.kinetics.base.flwdata.RotatingData;
 import com.simibubi.create.content.kinetics.simpleRelays.BracketedKineticBlockEntityRenderer;
+import com.simibubi.create.content.kinetics.simpleRelays.ICogWheel;
 import com.simibubi.create.foundation.render.AllMaterialSpecs;
 import com.simibubi.create.foundation.utility.Iterate;
 import net.minecraft.core.Direction;
@@ -31,14 +33,14 @@ public class CustomEncasedCogwheelBEInstance extends KineticBlockEntityInstance<
 
         Block block = blockEntity.getBlockState().getBlock();
 
-        if (!(block instanceof CustomEncasedCogwheelBlock encasedCog)) {
-            this.large = false;
-            this.material = CogwheelVariant.ANDESITE;
+        large = ICogWheel.isLargeCog(block);
+
+        if (block instanceof IHasMaterial hasMaterial) {
+            material = hasMaterial.getMaterial();
             return;
         }
 
-        this.large = encasedCog.isLargeCog();
-        this.material = encasedCog.getMaterial();
+        material = CogwheelVariant.DEFAULT;
     }
 
     private final boolean large;

@@ -1,5 +1,40 @@
 {
   "values": [
-    "cogged_up:andesite_cogwheel"
+    "cogged_up:andesite_cogwheel",
+    "cogged_up:andesite_encased_andesite_cogwheel",
+    "cogged_up:brass_encased_andesite_cogwheel",
+    "cogged_up:copper_encased_andesite_cogwheel",
+
+    "cogged_up:large_andesite_cogwheel",
+    "cogged_up:andesite_encased_large_andesite_cogwheel",
+    "cogged_up:brass_encased_large_andesite_cogwheel",
+    "cogged_up:copper_encased_large_andesite_cogwheel",
+
+    "cogged_up:brass_cogwheel",
+    "cogged_up:andesite_encased_brass_cogwheel",
+    "cogged_up:brass_encased_brass_cogwheel",
+    "cogged_up:copper_encased_brass_cogwheel",
+
+    "cogged_up:large_brass_cogwheel",
+    "cogged_up:andesite_encased_large_brass_cogwheel",
+    "cogged_up:brass_encased_large_brass_cogwheel",
+    "cogged_up:copper_encased_large_brass_cogwheel",
+
+    "cogged_up:copper_cogwheel",
+    "cogged_up:andesite_encased_copper_cogwheel",
+    "cogged_up:brass_encased_copper_cogwheel",
+    "cogged_up:copper_encased_copper_cogwheel",
+
+    "cogged_up:large_copper_cogwheel",
+    "cogged_up:andesite_encased_large_copper_cogwheel",
+    "cogged_up:brass_encased_large_copper_cogwheel",
+    "cogged_up:copper_encased_large_copper_cogwheel",
+
+    "cogged_up:copper_encased_shaft",
+    "cogged_up:copper_encased_cogwheel",
+    "cogged_up:copper_encased_large_cogwheel",
+
+    "cogged_up:industrial_iron_cogwheel",
+    "cogged_up:large_industrial_iron_cogwheel"
   ]
 }

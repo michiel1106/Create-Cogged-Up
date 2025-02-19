@@ -100,8 +100,10 @@ public class CoggedUpBlocks {
             .register();
 
     public static final BlockEntry<CustomCogwheelBlock> INDUSTRIAL_IRON_COGWHEEL = CoggedUp.REGISTRATE.block("industrial_iron_cogwheel", (p) -> new CustomCogwheelBlock(false, p, CogwheelVariant.INDUSTRIAL_IRON))
-            .initialProperties(SharedProperties::netheriteMetal)
-            .properties(p -> p.mapColor(MapColor.STONE))
+            .initialProperties(SharedProperties::softMetal)
+            .properties(p -> p.mapColor(MapColor.COLOR_GRAY)
+                    .sound(SoundType.NETHERITE_BLOCK)
+                    .requiresCorrectToolForDrops())
             .transform(BlockStressDefaults.setNoImpact())
             .transform(TagGen.pickaxeOnly())
             .blockstate(BlockStateGen.axisBlockProvider(false))
@@ -111,8 +113,10 @@ public class CoggedUpBlocks {
             .register();
 
     public static final BlockEntry<CustomCogwheelBlock> LARGE_INDUSTRIAL_IRON_COGWHEEL = CoggedUp.REGISTRATE.block("large_industrial_iron_cogwheel", (p) -> new CustomCogwheelBlock(true, p, CogwheelVariant.INDUSTRIAL_IRON))
-            .initialProperties(SharedProperties::netheriteMetal)
-            .properties(p -> p.mapColor(MapColor.DIRT))
+            .initialProperties(SharedProperties::softMetal)
+            .properties(p -> p.mapColor(MapColor.COLOR_GRAY)
+                    .sound(SoundType.NETHERITE_BLOCK)
+                    .requiresCorrectToolForDrops())
             .transform(BlockStressDefaults.setNoImpact())
             .transform(TagGen.pickaxeOnly())
             .blockstate(BlockStateGen.axisBlockProvider(false))
@@ -126,7 +130,7 @@ public class CoggedUpBlocks {
     public static final BlockEntry<CustomEncasedCogwheelBlock> ANDESITE_ENCASED_ANDESITE_COGWHEEL = CoggedUp.REGISTRATE.block
             ("andesite_encased_andesite_cogwheel", p -> new CustomEncasedCogwheelBlock(p, false, AllBlocks.ANDESITE_CASING::get, CogwheelVariant.ANDESITE))
             .transform(EncasingRegistry.addVariantTo(CoggedUpBlocks.ANDESITE_COGWHEEL))
-            .transform(BuilderTransformers.encasedCogwheel("andesite", () -> AllSpriteShifts.ANDESITE_CASING))
+            .transform(CoggedUpBuilderTransformers.encasedCogwheel("andesite", () -> AllSpriteShifts.ANDESITE_CASING, CogwheelVariant.ANDESITE))
             .onRegister(CreateRegistrate.connectedTextures(() -> new EncasedCogCTBehaviour(AllSpriteShifts.ANDESITE_CASING,
                     Couple.create(AllSpriteShifts.ANDESITE_ENCASED_COGWHEEL_SIDE,
                             AllSpriteShifts.ANDESITE_ENCASED_COGWHEEL_OTHERSIDE))))
@@ -135,7 +139,7 @@ public class CoggedUpBlocks {
     public static final BlockEntry<CustomEncasedCogwheelBlock> ANDESITE_ENCASED_LARGE_ANDESITE_COGWHEEL = CoggedUp.REGISTRATE.block
                     ("andesite_encased_large_andesite_cogwheel", p -> new CustomEncasedCogwheelBlock(p, true, AllBlocks.ANDESITE_CASING::get, CogwheelVariant.ANDESITE))
             .transform(EncasingRegistry.addVariantTo(CoggedUpBlocks.LARGE_ANDESITE_COGWHEEL))
-            .transform(BuilderTransformers.encasedCogwheel("andesite", () -> AllSpriteShifts.ANDESITE_CASING))
+            .transform(CoggedUpBuilderTransformers.encasedCogwheel("andesite", () -> AllSpriteShifts.ANDESITE_CASING, CogwheelVariant.ANDESITE))
             .onRegister(CreateRegistrate.connectedTextures(() -> new EncasedCogCTBehaviour(AllSpriteShifts.ANDESITE_CASING,
                     Couple.create(AllSpriteShifts.ANDESITE_ENCASED_COGWHEEL_SIDE,
                             AllSpriteShifts.ANDESITE_ENCASED_COGWHEEL_OTHERSIDE))))
@@ -146,7 +150,7 @@ public class CoggedUpBlocks {
     public static final BlockEntry<CustomEncasedCogwheelBlock> ANDESITE_ENCASED_BRASS_COGWHEEL = CoggedUp.REGISTRATE.block
                     ("andesite_encased_brass_cogwheel", p -> new CustomEncasedCogwheelBlock(p, false, AllBlocks.ANDESITE_CASING::get, CogwheelVariant.BRASS))
             .transform(EncasingRegistry.addVariantTo(CoggedUpBlocks.BRASS_COGWHEEL))
-            .transform(BuilderTransformers.encasedCogwheel("andesite", () -> AllSpriteShifts.ANDESITE_CASING))
+            .transform(CoggedUpBuilderTransformers.encasedCogwheel("andesite", () -> AllSpriteShifts.ANDESITE_CASING, CogwheelVariant.BRASS))
             .onRegister(CreateRegistrate.connectedTextures(() -> new EncasedCogCTBehaviour(AllSpriteShifts.ANDESITE_CASING,
                     Couple.create(AllSpriteShifts.ANDESITE_ENCASED_COGWHEEL_SIDE,
                             AllSpriteShifts.ANDESITE_ENCASED_COGWHEEL_OTHERSIDE))))
@@ -155,7 +159,7 @@ public class CoggedUpBlocks {
     public static final BlockEntry<CustomEncasedCogwheelBlock> ANDESITE_ENCASED_LARGE_BRASS_COGWHEEL = CoggedUp.REGISTRATE.block
                     ("andesite_encased_large_brass_cogwheel", p -> new CustomEncasedCogwheelBlock(p, true, AllBlocks.ANDESITE_CASING::get, CogwheelVariant.BRASS))
             .transform(EncasingRegistry.addVariantTo(CoggedUpBlocks.LARGE_BRASS_COGWHEEL))
-            .transform(BuilderTransformers.encasedCogwheel("andesite", () -> AllSpriteShifts.ANDESITE_CASING))
+            .transform(CoggedUpBuilderTransformers.encasedCogwheel("andesite", () -> AllSpriteShifts.ANDESITE_CASING, CogwheelVariant.BRASS))
             .onRegister(CreateRegistrate.connectedTextures(() -> new EncasedCogCTBehaviour(AllSpriteShifts.ANDESITE_CASING,
                     Couple.create(AllSpriteShifts.ANDESITE_ENCASED_COGWHEEL_SIDE,
                             AllSpriteShifts.ANDESITE_ENCASED_COGWHEEL_OTHERSIDE))))
@@ -166,7 +170,7 @@ public class CoggedUpBlocks {
     public static final BlockEntry<CustomEncasedCogwheelBlock> ANDESITE_ENCASED_COPPER_COGWHEEL = CoggedUp.REGISTRATE.block
                     ("andesite_encased_copper_cogwheel", p -> new CustomEncasedCogwheelBlock(p, false, AllBlocks.ANDESITE_CASING::get, CogwheelVariant.COPPER))
             .transform(EncasingRegistry.addVariantTo(CoggedUpBlocks.COPPER_COGWHEEL))
-            .transform(BuilderTransformers.encasedCogwheel("andesite", () -> AllSpriteShifts.ANDESITE_CASING))
+            .transform(CoggedUpBuilderTransformers.encasedCogwheel("andesite", () -> AllSpriteShifts.ANDESITE_CASING, CogwheelVariant.COPPER))
             .onRegister(CreateRegistrate.connectedTextures(() -> new EncasedCogCTBehaviour(AllSpriteShifts.ANDESITE_CASING,
                     Couple.create(AllSpriteShifts.ANDESITE_ENCASED_COGWHEEL_SIDE,
                             AllSpriteShifts.ANDESITE_ENCASED_COGWHEEL_OTHERSIDE))))
@@ -175,7 +179,7 @@ public class CoggedUpBlocks {
     public static final BlockEntry<CustomEncasedCogwheelBlock> ANDESITE_ENCASED_LARGE_COPPER_COGWHEEL = CoggedUp.REGISTRATE.block
                     ("andesite_encased_large_copper_cogwheel", p -> new CustomEncasedCogwheelBlock(p, true, AllBlocks.ANDESITE_CASING::get, CogwheelVariant.COPPER))
             .transform(EncasingRegistry.addVariantTo(CoggedUpBlocks.LARGE_COPPER_COGWHEEL))
-            .transform(BuilderTransformers.encasedCogwheel("andesite", () -> AllSpriteShifts.ANDESITE_CASING))
+            .transform(CoggedUpBuilderTransformers.encasedCogwheel("andesite", () -> AllSpriteShifts.ANDESITE_CASING, CogwheelVariant.COPPER))
             .onRegister(CreateRegistrate.connectedTextures(() -> new EncasedCogCTBehaviour(AllSpriteShifts.ANDESITE_CASING,
                     Couple.create(AllSpriteShifts.ANDESITE_ENCASED_COGWHEEL_SIDE,
                             AllSpriteShifts.ANDESITE_ENCASED_COGWHEEL_OTHERSIDE))))
@@ -188,7 +192,7 @@ public class CoggedUpBlocks {
     public static final BlockEntry<CustomEncasedCogwheelBlock> BRASS_ENCASED_ANDESITE_COGWHEEL = CoggedUp.REGISTRATE.block
                     ("brass_encased_andesite_cogwheel", p -> new CustomEncasedCogwheelBlock(p, false, AllBlocks.BRASS_CASING::get, CogwheelVariant.ANDESITE))
             .transform(EncasingRegistry.addVariantTo(CoggedUpBlocks.ANDESITE_COGWHEEL))
-            .transform(BuilderTransformers.encasedCogwheel("brass", () -> AllSpriteShifts.BRASS_CASING))
+            .transform(CoggedUpBuilderTransformers.encasedCogwheel("brass", () -> AllSpriteShifts.BRASS_CASING, CogwheelVariant.ANDESITE))
             .onRegister(CreateRegistrate.connectedTextures(() -> new EncasedCogCTBehaviour(AllSpriteShifts.BRASS_CASING,
                     Couple.create(AllSpriteShifts.BRASS_ENCASED_COGWHEEL_SIDE,
                             AllSpriteShifts.BRASS_ENCASED_COGWHEEL_OTHERSIDE))))
@@ -197,7 +201,7 @@ public class CoggedUpBlocks {
     public static final BlockEntry<CustomEncasedCogwheelBlock> BRASS_ENCASED_LARGE_ANDESITE_COGWHEEL = CoggedUp.REGISTRATE.block
                     ("brass_encased_large_andesite_cogwheel", p -> new CustomEncasedCogwheelBlock(p, true, AllBlocks.BRASS_CASING::get, CogwheelVariant.ANDESITE))
             .transform(EncasingRegistry.addVariantTo(CoggedUpBlocks.LARGE_ANDESITE_COGWHEEL))
-            .transform(BuilderTransformers.encasedCogwheel("brass", () -> AllSpriteShifts.BRASS_CASING))
+            .transform(CoggedUpBuilderTransformers.encasedCogwheel("brass", () -> AllSpriteShifts.BRASS_CASING, CogwheelVariant.ANDESITE))
             .onRegister(CreateRegistrate.connectedTextures(() -> new EncasedCogCTBehaviour(AllSpriteShifts.BRASS_CASING,
                     Couple.create(AllSpriteShifts.BRASS_ENCASED_COGWHEEL_SIDE,
                             AllSpriteShifts.BRASS_ENCASED_COGWHEEL_OTHERSIDE))))
@@ -208,7 +212,7 @@ public class CoggedUpBlocks {
     public static final BlockEntry<CustomEncasedCogwheelBlock> BRASS_ENCASED_BRASS_COGWHEEL = CoggedUp.REGISTRATE.block
                     ("brass_encased_brass_cogwheel", p -> new CustomEncasedCogwheelBlock(p, false, AllBlocks.BRASS_CASING::get, CogwheelVariant.BRASS))
             .transform(EncasingRegistry.addVariantTo(CoggedUpBlocks.BRASS_COGWHEEL))
-            .transform(BuilderTransformers.encasedCogwheel("brass", () -> AllSpriteShifts.BRASS_CASING))
+            .transform(CoggedUpBuilderTransformers.encasedCogwheel("brass", () -> AllSpriteShifts.BRASS_CASING, CogwheelVariant.BRASS))
             .onRegister(CreateRegistrate.connectedTextures(() -> new EncasedCogCTBehaviour(AllSpriteShifts.BRASS_CASING,
                     Couple.create(AllSpriteShifts.BRASS_ENCASED_COGWHEEL_SIDE,
                             AllSpriteShifts.BRASS_ENCASED_COGWHEEL_OTHERSIDE))))
@@ -217,7 +221,7 @@ public class CoggedUpBlocks {
     public static final BlockEntry<CustomEncasedCogwheelBlock> BRASS_ENCASED_LARGE_BRASS_COGWHEEL = CoggedUp.REGISTRATE.block
                     ("brass_encased_large_brass_cogwheel", p -> new CustomEncasedCogwheelBlock(p, true, AllBlocks.BRASS_CASING::get, CogwheelVariant.BRASS))
             .transform(EncasingRegistry.addVariantTo(CoggedUpBlocks.LARGE_BRASS_COGWHEEL))
-            .transform(BuilderTransformers.encasedCogwheel("brass", () -> AllSpriteShifts.BRASS_CASING))
+            .transform(CoggedUpBuilderTransformers.encasedCogwheel("brass", () -> AllSpriteShifts.BRASS_CASING, CogwheelVariant.BRASS))
             .onRegister(CreateRegistrate.connectedTextures(() -> new EncasedCogCTBehaviour(AllSpriteShifts.BRASS_CASING,
                     Couple.create(AllSpriteShifts.BRASS_ENCASED_COGWHEEL_SIDE,
                             AllSpriteShifts.BRASS_ENCASED_COGWHEEL_OTHERSIDE))))
@@ -228,7 +232,7 @@ public class CoggedUpBlocks {
     public static final BlockEntry<CustomEncasedCogwheelBlock> BRASS_ENCASED_COPPER_COGWHEEL = CoggedUp.REGISTRATE.block
                     ("brass_encased_copper_cogwheel", p -> new CustomEncasedCogwheelBlock(p, false, AllBlocks.BRASS_CASING::get, CogwheelVariant.COPPER))
             .transform(EncasingRegistry.addVariantTo(CoggedUpBlocks.COPPER_COGWHEEL))
-            .transform(BuilderTransformers.encasedCogwheel("brass", () -> AllSpriteShifts.BRASS_CASING))
+            .transform(CoggedUpBuilderTransformers.encasedCogwheel("brass", () -> AllSpriteShifts.BRASS_CASING, CogwheelVariant.COPPER))
             .onRegister(CreateRegistrate.connectedTextures(() -> new EncasedCogCTBehaviour(AllSpriteShifts.BRASS_CASING,
                     Couple.create(AllSpriteShifts.BRASS_ENCASED_COGWHEEL_SIDE,
                             AllSpriteShifts.BRASS_ENCASED_COGWHEEL_OTHERSIDE))))
@@ -237,7 +241,7 @@ public class CoggedUpBlocks {
     public static final BlockEntry<CustomEncasedCogwheelBlock> BRASS_ENCASED_LARGE_COPPER_COGWHEEL = CoggedUp.REGISTRATE.block
                     ("brass_encased_large_copper_cogwheel", p -> new CustomEncasedCogwheelBlock(p, true, AllBlocks.BRASS_CASING::get, CogwheelVariant.COPPER))
             .transform(EncasingRegistry.addVariantTo(CoggedUpBlocks.LARGE_COPPER_COGWHEEL))
-            .transform(BuilderTransformers.encasedCogwheel("brass", () -> AllSpriteShifts.BRASS_CASING))
+            .transform(CoggedUpBuilderTransformers.encasedCogwheel("brass", () -> AllSpriteShifts.BRASS_CASING, CogwheelVariant.COPPER))
             .onRegister(CreateRegistrate.connectedTextures(() -> new EncasedCogCTBehaviour(AllSpriteShifts.BRASS_CASING,
                     Couple.create(AllSpriteShifts.BRASS_ENCASED_COGWHEEL_SIDE,
                             AllSpriteShifts.BRASS_ENCASED_COGWHEEL_OTHERSIDE))))
@@ -250,7 +254,7 @@ public class CoggedUpBlocks {
     public static final BlockEntry<CustomEncasedCogwheelBlock> COPPER_ENCASED_ANDESITE_COGWHEEL = CoggedUp.REGISTRATE.block
                     ("copper_encased_andesite_cogwheel", p -> new CustomEncasedCogwheelBlock(p, false, AllBlocks.COPPER_CASING::get, CogwheelVariant.ANDESITE))
             .transform(EncasingRegistry.addVariantTo(CoggedUpBlocks.ANDESITE_COGWHEEL))
-            .transform(BuilderTransformers.encasedCogwheel("copper", () -> AllSpriteShifts.COPPER_CASING))
+            .transform(CoggedUpBuilderTransformers.encasedCogwheel("copper", () -> AllSpriteShifts.COPPER_CASING, CogwheelVariant.ANDESITE))
             .onRegister(CreateRegistrate.connectedTextures(() -> new EncasedCogCTBehaviour(AllSpriteShifts.COPPER_CASING,
                     Couple.create(CoggedUpSpriteShifts.COPPER_ENCASED_COGWHEEL_SIDE,
                             CoggedUpSpriteShifts.COPPER_ENCASED_COGWHEEL_OTHERSIDE))))
@@ -259,7 +263,7 @@ public class CoggedUpBlocks {
     public static final BlockEntry<CustomEncasedCogwheelBlock> COPPER_ENCASED_LARGE_ANDESITE_COGWHEEL = CoggedUp.REGISTRATE.block
                     ("copper_encased_large_andesite_cogwheel", p -> new CustomEncasedCogwheelBlock(p, true, AllBlocks.COPPER_CASING::get, CogwheelVariant.ANDESITE))
             .transform(EncasingRegistry.addVariantTo(CoggedUpBlocks.LARGE_ANDESITE_COGWHEEL))
-            .transform(BuilderTransformers.encasedCogwheel("copper", () -> AllSpriteShifts.COPPER_CASING))
+            .transform(CoggedUpBuilderTransformers.encasedCogwheel("copper", () -> AllSpriteShifts.COPPER_CASING, CogwheelVariant.ANDESITE))
             .onRegister(CreateRegistrate.connectedTextures(() -> new EncasedCogCTBehaviour(AllSpriteShifts.COPPER_CASING,
                     Couple.create(CoggedUpSpriteShifts.COPPER_ENCASED_COGWHEEL_SIDE,
                             CoggedUpSpriteShifts.COPPER_ENCASED_COGWHEEL_OTHERSIDE))))
@@ -270,7 +274,7 @@ public class CoggedUpBlocks {
     public static final BlockEntry<CustomEncasedCogwheelBlock> COPPER_ENCASED_BRASS_COGWHEEL = CoggedUp.REGISTRATE.block
                     ("copper_encased_brass_cogwheel", p -> new CustomEncasedCogwheelBlock(p, false, AllBlocks.COPPER_CASING::get, CogwheelVariant.BRASS))
             .transform(EncasingRegistry.addVariantTo(CoggedUpBlocks.BRASS_COGWHEEL))
-            .transform(BuilderTransformers.encasedCogwheel("copper", () -> AllSpriteShifts.COPPER_CASING))
+            .transform(CoggedUpBuilderTransformers.encasedCogwheel("copper", () -> AllSpriteShifts.COPPER_CASING, CogwheelVariant.BRASS))
             .onRegister(CreateRegistrate.connectedTextures(() -> new EncasedCogCTBehaviour(AllSpriteShifts.COPPER_CASING,
                     Couple.create(CoggedUpSpriteShifts.COPPER_ENCASED_COGWHEEL_SIDE,
                             CoggedUpSpriteShifts.COPPER_ENCASED_COGWHEEL_OTHERSIDE))))
@@ -279,7 +283,7 @@ public class CoggedUpBlocks {
     public static final BlockEntry<CustomEncasedCogwheelBlock> COPPER_ENCASED_LARGE_BRASS_COGWHEEL = CoggedUp.REGISTRATE.block
                     ("copper_encased_large_brass_cogwheel", p -> new CustomEncasedCogwheelBlock(p, true, AllBlocks.COPPER_CASING::get, CogwheelVariant.BRASS))
             .transform(EncasingRegistry.addVariantTo(CoggedUpBlocks.LARGE_BRASS_COGWHEEL))
-            .transform(BuilderTransformers.encasedCogwheel("copper", () -> AllSpriteShifts.COPPER_CASING))
+            .transform(CoggedUpBuilderTransformers.encasedCogwheel("copper", () -> AllSpriteShifts.COPPER_CASING, CogwheelVariant.BRASS))
             .onRegister(CreateRegistrate.connectedTextures(() -> new EncasedCogCTBehaviour(AllSpriteShifts.COPPER_CASING,
                     Couple.create(CoggedUpSpriteShifts.COPPER_ENCASED_COGWHEEL_SIDE,
                             CoggedUpSpriteShifts.COPPER_ENCASED_COGWHEEL_OTHERSIDE))))
@@ -290,7 +294,7 @@ public class CoggedUpBlocks {
     public static final BlockEntry<CustomEncasedCogwheelBlock> COPPER_ENCASED_COPPER_COGWHEEL = CoggedUp.REGISTRATE.block
                     ("copper_encased_copper_cogwheel", p -> new CustomEncasedCogwheelBlock(p, false, AllBlocks.COPPER_CASING::get, CogwheelVariant.COPPER))
             .transform(EncasingRegistry.addVariantTo(CoggedUpBlocks.COPPER_COGWHEEL))
-            .transform(BuilderTransformers.encasedCogwheel("copper", () -> AllSpriteShifts.COPPER_CASING))
+            .transform(CoggedUpBuilderTransformers.encasedCogwheel("copper", () -> AllSpriteShifts.COPPER_CASING, CogwheelVariant.COPPER))
             .onRegister(CreateRegistrate.connectedTextures(() -> new EncasedCogCTBehaviour(AllSpriteShifts.COPPER_CASING,
                     Couple.create(CoggedUpSpriteShifts.COPPER_ENCASED_COGWHEEL_SIDE,
                             CoggedUpSpriteShifts.COPPER_ENCASED_COGWHEEL_OTHERSIDE))))
@@ -299,7 +303,7 @@ public class CoggedUpBlocks {
     public static final BlockEntry<CustomEncasedCogwheelBlock> COPPER_ENCASED_LARGE_COPPER_COGWHEEL = CoggedUp.REGISTRATE.block
                     ("copper_encased_large_copper_cogwheel", p -> new CustomEncasedCogwheelBlock(p, true, AllBlocks.COPPER_CASING::get, CogwheelVariant.COPPER))
             .transform(EncasingRegistry.addVariantTo(CoggedUpBlocks.LARGE_COPPER_COGWHEEL))
-            .transform(BuilderTransformers.encasedCogwheel("copper", () -> AllSpriteShifts.COPPER_CASING))
+            .transform(CoggedUpBuilderTransformers.encasedCogwheel("copper", () -> AllSpriteShifts.COPPER_CASING, CogwheelVariant.COPPER))
             .onRegister(CreateRegistrate.connectedTextures(() -> new EncasedCogCTBehaviour(AllSpriteShifts.COPPER_CASING,
                     Couple.create(CoggedUpSpriteShifts.COPPER_ENCASED_COGWHEEL_SIDE,
                             CoggedUpSpriteShifts.COPPER_ENCASED_COGWHEEL_OTHERSIDE))))
