@@ -13,6 +13,9 @@ description='''
 A mod that adds bunch of new cogwheels based on materials of Create
 '''
 
+[[mixins]]
+config="cogged_up.mixins.json"
+
 [[dependencies.cogged_up]]
     modId="forge"
     mandatory=true
@@ -23,7 +26,7 @@ A mod that adds bunch of new cogwheels based on materials of Create
 [[dependencies.cogged_up]]
     modId="create"
     mandatory=true
-    versionRange="[0.5.1.j-55,)"
+    versionRange="[0.5.1,)"
     ordering="NONE"
     side="BOTH"
 

@@ -2,6 +2,7 @@
   "required": true,
   "minVersion": "0.8",
   "package": "com.lampboy.cogged_up.mixin",
+  "refmap": "cogged_up.refmap.json",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
     "create.CogWheelBlockMixin",

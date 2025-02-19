@@ -32,7 +32,7 @@ public abstract class CogWheelBlockMixin {
         return null;
     }
 
-    @Inject(at = @At("HEAD"), method = "use", remap = false, cancellable = true)
+    @Inject(at = @At("HEAD"), method = "use", cancellable = true)
     private void coggedUp$use(BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand,
                               BlockHitResult ray, CallbackInfoReturnable<InteractionResult> cir) {
         ItemStack heldItem = player.getItemInHand(hand);

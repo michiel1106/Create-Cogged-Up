@@ -22,7 +22,7 @@ public enum CogwheelVariant {
             CoggedUpPartialModels.ANDESITE_COGWHEEL_SHAFTLESS,
             CoggedUpPartialModels.LARGE_ANDESITE_COGWHEEL_SHAFTLESS),
 
-    BRASS(6, SharedProperties::softMetal,
+    BRASS(5, SharedProperties::softMetal,
             p -> p.mapColor(MapColor.TERRACOTTA_YELLOW),
             CoggedUpPartialModels.BRASS_COGWHEEL_SHAFTLESS,
             CoggedUpPartialModels.LARGE_BRASS_COGWHEEL_SHAFTLESS),
@@ -32,7 +32,7 @@ public enum CogwheelVariant {
             CoggedUpPartialModels.COPPER_COGWHEEL_SHAFTLESS,
             CoggedUpPartialModels.LARGE_COPPER_COGWHEEL_SHAFTLESS),
 
-    INDUSTRIAL_IRON(5, SharedProperties::softMetal,
+    INDUSTRIAL_IRON(4, SharedProperties::softMetal,
             p -> p.mapColor(MapColor.COLOR_GRAY)
             .sound(SoundType.NETHERITE_BLOCK)
             .requiresCorrectToolForDrops(),
