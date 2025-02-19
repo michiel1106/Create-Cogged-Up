@@ -51,6 +51,10 @@ public abstract class CogWheelBlockMixin {
         }
     }
 
+    /**
+     * Method from {@link com.simibubi.create.content.decoration.encasing.EncasableBlock}.
+     * Copied the exact method since it was set to private.
+     * */
     @Unique
     private void coggedUp$playEncasingSound(Level world, BlockPos pos) {
         BlockState newState = world.getBlockState(pos);
