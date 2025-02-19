@@ -8,7 +8,9 @@
       "item": "create:andesite_alloy"
     }
   ],
-  "result": {
-    "item": "cogged_up:large_andesite_cogwheel"
-  }
+  "results": [
+    {
+      "item": "cogged_up:large_andesite_cogwheel"
+    }
+  ]
 }

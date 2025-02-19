@@ -8,7 +8,9 @@
       "item": "minecraft:iron_ingot"
     }
   ],
-  "result": {
-    "item": "cogged_up:industrial_iron_cogwheel"
-  }
+  "results": [
+    {
+      "item": "cogged_up:industrial_iron_cogwheel"
+    }
+  ]
 }
