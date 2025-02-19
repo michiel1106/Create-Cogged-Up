@@ -1,17 +1,11 @@
 package com.lampboy.cogged_up.content.custom_cogwheel.encased;
 
-import com.lampboy.cogged_up.AddonBETypes;
-import com.lampboy.cogged_up.AddonBlocks;
+import com.lampboy.cogged_up.CoggedUpBETypes;
+import com.lampboy.cogged_up.CoggedUpBlocks;
 import com.lampboy.cogged_up.content.custom_cogwheel.CogwheelVariant;
 import com.lampboy.cogged_up.content.custom_cogwheel.IHasMaterial;
-import com.simibubi.create.AllBlocks;
-import com.simibubi.create.content.contraptions.ITransformableBlock;
-import com.simibubi.create.content.decoration.encasing.EncasedBlock;
-import com.simibubi.create.content.kinetics.simpleRelays.ICogWheel;
 import com.simibubi.create.content.kinetics.simpleRelays.SimpleKineticBlockEntity;
 import com.simibubi.create.content.kinetics.simpleRelays.encased.EncasedCogwheelBlock;
-import com.simibubi.create.content.schematics.requirement.ISpecialBlockItemRequirement;
-import com.simibubi.create.foundation.block.IBE;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -43,15 +37,15 @@ public class CustomEncasedCogwheelBlock extends EncasedCogwheelBlock implements 
             switch (material) {
                 case ANDESITE -> {return ((BlockHitResult) target).getDirection()
                         .getAxis() != getRotationAxis(state)
-                        ? isLarge ? AddonBlocks.LARGE_ANDESITE_COGWHEEL.asStack() : AddonBlocks.ANDESITE_COGWHEEL.asStack()
+                        ? isLarge ? CoggedUpBlocks.LARGE_ANDESITE_COGWHEEL.asStack() : CoggedUpBlocks.ANDESITE_COGWHEEL.asStack()
                         : getCasing().asItem().getDefaultInstance();}
                 case BRASS -> {return ((BlockHitResult) target).getDirection()
                         .getAxis() != getRotationAxis(state)
-                        ? isLarge ? AddonBlocks.LARGE_BRASS_COGWHEEL.asStack() : AddonBlocks.BRASS_COGWHEEL.asStack()
+                        ? isLarge ? CoggedUpBlocks.LARGE_BRASS_COGWHEEL.asStack() : CoggedUpBlocks.BRASS_COGWHEEL.asStack()
                         : getCasing().asItem().getDefaultInstance();}
                 case COPPER -> {return ((BlockHitResult) target).getDirection()
                         .getAxis() != getRotationAxis(state)
-                        ? isLarge ? AddonBlocks.LARGE_COPPER_COGWHEEL.asStack() : AddonBlocks.COPPER_COGWHEEL.asStack()
+                        ? isLarge ? CoggedUpBlocks.LARGE_COPPER_COGWHEEL.asStack() : CoggedUpBlocks.COPPER_COGWHEEL.asStack()
                         : getCasing().asItem().getDefaultInstance();}
             }
         return super.getCloneItemStack(state, target, world, pos, player);
@@ -59,6 +53,6 @@ public class CustomEncasedCogwheelBlock extends EncasedCogwheelBlock implements 
 
     @Override
     public BlockEntityType<? extends SimpleKineticBlockEntity> getBlockEntityType() {
-        return AddonBETypes.CUSTOM_ENCASED_COGWHEEL_BE.get();
+        return CoggedUpBETypes.CUSTOM_ENCASED_COGWHEEL_BE.get();
     }
 }

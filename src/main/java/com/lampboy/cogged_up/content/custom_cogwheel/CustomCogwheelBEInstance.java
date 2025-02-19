@@ -5,7 +5,7 @@ import com.jozufozu.flywheel.api.Material;
 import com.jozufozu.flywheel.api.MaterialManager;
 import com.jozufozu.flywheel.core.PartialModel;
 import com.jozufozu.flywheel.util.transform.TransformStack;
-import com.lampboy.cogged_up.AddonPartialModels;
+import com.lampboy.cogged_up.CoggedUpPartialModels;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import com.simibubi.create.AllPartialModels;
@@ -82,14 +82,14 @@ public class CustomCogwheelBEInstance extends SingleRotatingInstance<BracketedKi
         PartialModel partialModel = AllPartialModels.SHAFTLESS_LARGE_COGWHEEL;
 
         switch (material) {
-            case ANDESITE -> partialModel = AddonPartialModels.LARGE_ANDESITE_COGWHEEL_SHAFTLESS;
-            case BRASS -> partialModel = AddonPartialModels.LARGE_BRASS_COGWHEEL_SHAFTLESS;
+            case ANDESITE -> partialModel = CoggedUpPartialModels.LARGE_ANDESITE_COGWHEEL_SHAFTLESS;
+            case BRASS -> partialModel = CoggedUpPartialModels.LARGE_BRASS_COGWHEEL_SHAFTLESS;
             case COPPER -> {
-                partialModel = AddonPartialModels.LARGE_COPPER_COGWHEEL_SHAFTLESS;
+                partialModel = CoggedUpPartialModels.LARGE_COPPER_COGWHEEL_SHAFTLESS;
                 rotatingMaterial = materialManager.defaultCutout()
                         .material(AllMaterialSpecs.ROTATING);
             }
-            case INDUSTRIAL_IRON -> partialModel = AddonPartialModels.LARGE_INDUSTRIAL_IRON_COGWHEEL_SHAFTLESS;
+            case INDUSTRIAL_IRON -> partialModel = CoggedUpPartialModels.LARGE_INDUSTRIAL_IRON_COGWHEEL_SHAFTLESS;
         }
 
         return rotatingMaterial.getModel(partialModel, blockState, facing, () -> this.rotateToAxis(axis));

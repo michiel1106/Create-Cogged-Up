@@ -2,7 +2,7 @@ package com.lampboy.cogged_up;
 
 import com.jozufozu.flywheel.core.PartialModel;
 
-public class AddonPartialModels {
+public class CoggedUpPartialModels {
 
     public static final PartialModel
 

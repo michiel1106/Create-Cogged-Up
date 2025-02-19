@@ -1,6 +1,7 @@
 package com.lampboy.cogged_up.content.custom_cogwheel;
 
 public enum CogwheelVariant {
+    DEFAULT(1),
     ANDESITE(2),
     BRASS(4),
     COPPER(3),

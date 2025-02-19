@@ -6,9 +6,8 @@ import com.jozufozu.flywheel.api.Material;
 import com.jozufozu.flywheel.api.MaterialManager;
 import com.jozufozu.flywheel.core.PartialModel;
 import com.jozufozu.flywheel.util.transform.TransformStack;
-import com.lampboy.cogged_up.AddonPartialModels;
+import com.lampboy.cogged_up.CoggedUpPartialModels;
 import com.lampboy.cogged_up.content.custom_cogwheel.CogwheelVariant;
-import com.lampboy.cogged_up.content.custom_cogwheel.CustomCogwheelBlock;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import com.simibubi.create.AllPartialModels;
@@ -17,8 +16,6 @@ import com.simibubi.create.content.kinetics.base.KineticBlockEntity;
 import com.simibubi.create.content.kinetics.base.KineticBlockEntityInstance;
 import com.simibubi.create.content.kinetics.base.flwdata.RotatingData;
 import com.simibubi.create.content.kinetics.simpleRelays.BracketedKineticBlockEntityRenderer;
-import com.simibubi.create.content.kinetics.simpleRelays.ICogWheel;
-import com.simibubi.create.content.kinetics.simpleRelays.encased.EncasedCogInstance;
 import com.simibubi.create.foundation.render.AllMaterialSpecs;
 import com.simibubi.create.foundation.utility.Iterate;
 import net.minecraft.core.Direction;
@@ -86,18 +83,21 @@ public class CustomEncasedCogwheelBEInstance extends KineticBlockEntityInstance<
         Material<RotatingData> rotatingMaterial = materialManager.defaultSolid().material(AllMaterialSpecs.ROTATING);
 
         switch (material) {
+            case DEFAULT -> partial = large
+                    ? AllPartialModels.SHAFTLESS_LARGE_COGWHEEL
+                    : AllPartialModels.SHAFTLESS_COGWHEEL;
             case ANDESITE -> partial = large
-                    ? AddonPartialModels.LARGE_ANDESITE_COGWHEEL_SHAFTLESS
-                    : AddonPartialModels.ANDESITE_COGWHEEL_SHAFTLESS;
+                    ? CoggedUpPartialModels.LARGE_ANDESITE_COGWHEEL_SHAFTLESS
+                    : CoggedUpPartialModels.ANDESITE_COGWHEEL_SHAFTLESS;
             case BRASS -> partial = large
-                    ? AddonPartialModels.LARGE_BRASS_COGWHEEL_SHAFTLESS
-                    : AddonPartialModels.BRASS_COGWHEEL_SHAFTLESS;
+                    ? CoggedUpPartialModels.LARGE_BRASS_COGWHEEL_SHAFTLESS
+                    : CoggedUpPartialModels.BRASS_COGWHEEL_SHAFTLESS;
             case COPPER -> {
                 rotatingMaterial = materialManager.defaultCutout()
                         .material(AllMaterialSpecs.ROTATING);
                 partial = large
-                        ? AddonPartialModels.LARGE_COPPER_COGWHEEL_SHAFTLESS
-                        : AddonPartialModels.COPPER_COGWHEEL_SHAFTLESS;
+                        ? CoggedUpPartialModels.LARGE_COPPER_COGWHEEL_SHAFTLESS
+                        : CoggedUpPartialModels.COPPER_COGWHEEL_SHAFTLESS;
             }
         }
 
