@@ -1,4 +1,4 @@
-<p align="center"><img src="./.idea/icon.png" alt="Logo" width="200"></p>
+<p align="center"><img src="icon/icon.png" alt="Logo" width="200"></p>
 <h1 align="center">Create : Cogged Up  <br>
 </h1>
 
