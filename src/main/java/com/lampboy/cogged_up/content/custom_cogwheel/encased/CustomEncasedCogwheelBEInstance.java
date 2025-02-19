@@ -81,27 +81,31 @@ public class CustomEncasedCogwheelBEInstance extends KineticBlockEntityInstance<
         Direction facing =
                 Direction.fromAxisAndDirection(referenceState.getValue(BlockStateProperties.AXIS), Direction.AxisDirection.POSITIVE);
 
-        PartialModel partial = AllPartialModels.SHAFTLESS_COGWHEEL;
-        Material<RotatingData> rotatingMaterial = materialManager.defaultSolid().material(AllMaterialSpecs.ROTATING);
+        PartialModel partial = large
+                ? material.getLargeShaftlessPartialModel()
+                : material.getSmallShaftlessPartialModel();
+        Material<RotatingData> rotatingMaterial = material == CogwheelVariant.COPPER
+                ? materialManager.defaultCutout().material(AllMaterialSpecs.ROTATING)
+                : materialManager.defaultSolid().material(AllMaterialSpecs.ROTATING);
 
-        switch (material) {
-            case DEFAULT -> partial = large
-                    ? AllPartialModels.SHAFTLESS_LARGE_COGWHEEL
-                    : AllPartialModels.SHAFTLESS_COGWHEEL;
-            case ANDESITE -> partial = large
-                    ? CoggedUpPartialModels.LARGE_ANDESITE_COGWHEEL_SHAFTLESS
-                    : CoggedUpPartialModels.ANDESITE_COGWHEEL_SHAFTLESS;
-            case BRASS -> partial = large
-                    ? CoggedUpPartialModels.LARGE_BRASS_COGWHEEL_SHAFTLESS
-                    : CoggedUpPartialModels.BRASS_COGWHEEL_SHAFTLESS;
-            case COPPER -> {
-                rotatingMaterial = materialManager.defaultCutout()
-                        .material(AllMaterialSpecs.ROTATING);
-                partial = large
-                        ? CoggedUpPartialModels.LARGE_COPPER_COGWHEEL_SHAFTLESS
-                        : CoggedUpPartialModels.COPPER_COGWHEEL_SHAFTLESS;
-            }
-        }
+//        switch (material) {
+//            case DEFAULT -> partial = large
+//                    ? AllPartialModels.SHAFTLESS_LARGE_COGWHEEL
+//                    : AllPartialModels.SHAFTLESS_COGWHEEL;
+//            case ANDESITE -> partial = large
+//                    ? CoggedUpPartialModels.LARGE_ANDESITE_COGWHEEL_SHAFTLESS
+//                    : CoggedUpPartialModels.ANDESITE_COGWHEEL_SHAFTLESS;
+//            case BRASS -> partial = large
+//                    ? CoggedUpPartialModels.LARGE_BRASS_COGWHEEL_SHAFTLESS
+//                    : CoggedUpPartialModels.BRASS_COGWHEEL_SHAFTLESS;
+//            case COPPER -> {
+//                rotatingMaterial = materialManager.defaultCutout()
+//                        .material(AllMaterialSpecs.ROTATING);
+//                partial = large
+//                        ? CoggedUpPartialModels.LARGE_COPPER_COGWHEEL_SHAFTLESS
+//                        : CoggedUpPartialModels.COPPER_COGWHEEL_SHAFTLESS;
+//            }
+//        }
 
         return rotatingMaterial.getModel(partial, referenceState, facing, () -> {
             PoseStack poseStack = new PoseStack();

@@ -78,19 +78,13 @@ public class CustomCogwheelBEInstance extends SingleRotatingInstance<BracketedKi
                     .getModel(AllPartialModels.SHAFTLESS_LARGE_COGWHEEL, blockState, facing, () -> this.rotateToAxis(axis));
         }
 
-        Material<RotatingData> rotatingMaterial = materialManager.defaultSolid().material(AllMaterialSpecs.ROTATING);
-        PartialModel partialModel = AllPartialModels.SHAFTLESS_LARGE_COGWHEEL;
+        PartialModel partialModel = ICogWheel.isLargeCog(block)
+                ? material.getLargeShaftlessPartialModel()
+                : material.getSmallShaftlessPartialModel();
 
-        switch (material) {
-            case ANDESITE -> partialModel = CoggedUpPartialModels.LARGE_ANDESITE_COGWHEEL_SHAFTLESS;
-            case BRASS -> partialModel = CoggedUpPartialModels.LARGE_BRASS_COGWHEEL_SHAFTLESS;
-            case COPPER -> {
-                partialModel = CoggedUpPartialModels.LARGE_COPPER_COGWHEEL_SHAFTLESS;
-                rotatingMaterial = materialManager.defaultCutout()
-                        .material(AllMaterialSpecs.ROTATING);
-            }
-            case INDUSTRIAL_IRON -> partialModel = CoggedUpPartialModels.LARGE_INDUSTRIAL_IRON_COGWHEEL_SHAFTLESS;
-        }
+        Material<RotatingData> rotatingMaterial = material == CogwheelVariant.COPPER
+                ? materialManager.defaultCutout().material(AllMaterialSpecs.ROTATING)
+                : materialManager.defaultSolid().material(AllMaterialSpecs.ROTATING);
 
         return rotatingMaterial.getModel(partialModel, blockState, facing, () -> this.rotateToAxis(axis));
     }
