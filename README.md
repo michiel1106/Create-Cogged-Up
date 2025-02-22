@@ -6,4 +6,9 @@
 <p align="center">They not only serve aesthetics but also contains gameplay changes</p>
 
 <p align="center">vvv Check out the mod in CurseForge and Modrinth vvv</p>
-<p align="center">(link is not added yet)</p>
+<a href="https://www.curseforge.com/minecraft/mc-mods/create-cogged-up">
+  <p align="center">CurseForge</p>
+</a>
+<a href="https://modrinth.com/mod/create-cogged-up">
+  <p align="center">Modrinth</p>
+</a>
