@@ -5,7 +5,7 @@ license="${mod_license}"
 
 [[mods]]
 modId="cogged_up"
-version="1.0.0"
+version="${mod_version}"
 displayName="Create: Cogged Up"
 authors="LampBoy"
 logoFile="icon.png"
