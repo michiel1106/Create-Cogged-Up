@@ -1,0 +1,9 @@
+{
+	"parent": "cogged_up:block/large_andesite_cogwheel/encased",
+	"textures": {
+		"cog_main": "cogged_up:block/large_andesite_cogwheel",
+		"cube_inside": "cogged_up:block/stripped_gray_log_top",
+		"cube_top": "create:block/copper_casing",
+		"cube_side": "cogged_up:block/copper_encased_cogwheel_side_connected"
+	}
+}

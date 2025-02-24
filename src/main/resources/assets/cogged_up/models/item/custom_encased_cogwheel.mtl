@@ -1,0 +1,14 @@
+# Blender 4.0.2 MTL File: 'mccog.blend'
+# www.blender.org
+
+newmtl cog_main
+map_Kd #cog_main
+
+newmtl cube_inside
+map_Kd #cube_inside
+
+newmtl cube_side
+map_Kd #cube_side
+
+newmtl cube_top
+map_Kd #cube_top

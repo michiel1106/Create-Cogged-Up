@@ -1,0 +1,6 @@
+{
+  "parent": "create:block/large_wheels",
+  "loader": "forge:obj",
+  "flip_v": true,
+  "model": "cogged_up:models/block/large_brass_cogwheel/encased.obj"
+}

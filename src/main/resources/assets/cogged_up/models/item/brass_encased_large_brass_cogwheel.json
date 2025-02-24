@@ -1,0 +1,9 @@
+{
+	"parent": "cogged_up:block/large_brass_cogwheel/encased",
+	"textures": {
+		"cog_main": "cogged_up:block/large_brass_cogwheel",
+		"cube_inside": "minecraft:block/stripped_dark_oak_log_top",
+		"cube_top": "create:block/brass_casing",
+		"cube_side": "create:block/brass_encased_cogwheel_side_connected"
+	}
+}
