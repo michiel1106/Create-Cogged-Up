@@ -6,5 +6,30 @@
   "block.cogged_up.copper_cogwheel": "Copper Cogwheel",
   "block.cogged_up.large_copper_cogwheel": "Large Copper Cogwheel",
   "block.cogged_up.industrial_iron_cogwheel": "Industrial Cogwheel",
-  "block.cogged_up.large_industrial_iron_cogwheel": "Large Industrial Cogwheel"
+  "block.cogged_up.large_industrial_iron_cogwheel": "Large Industrial Cogwheel",
+
+  "block.cogged_up.andesite_encased_andesite_cogwheel": "Andesite Encased Andesite Cogwheel",
+  "block.cogged_up.brass_encased_andesite_cogwheel": "Brass Encased Andesite Cogwheel",
+  "block.cogged_up.copper_encased_andesite_cogwheel": "Copper Encased Andesite Cogwheel",
+  "block.cogged_up.andesite_encased_large_andesite_cogwheel": "Andesite Encased Large Andesite Cogwheel",
+  "block.cogged_up.brass_encased_large_andesite_cogwheel": "Brass Encased Large Andesite Cogwheel",
+  "block.cogged_up.copper_encased_large_andesite_cogwheel": "Copper Encased Large Andesite Cogwheel",
+
+  "block.cogged_up.andesite_encased_brass_cogwheel": "Andesite Encased Brass Cogwheel",
+  "block.cogged_up.brass_encased_brass_cogwheel": "Brass Encased Brass Cogwheel",
+  "block.cogged_up.copper_encased_brass_cogwheel": "Copper Encased Brass Cogwheel",
+  "block.cogged_up.andesite_encased_large_brass_cogwheel": "Andesite Encased Large Brass Cogwheel",
+  "block.cogged_up.brass_encased_large_brass_cogwheel": "Brass Encased Large Brass Cogwheel",
+  "block.cogged_up.copper_encased_large_brass_cogwheel": "Copper Encased Large Brass Cogwheel",
+
+  "block.cogged_up.andesite_encased_copper_cogwheel": "Andesite Encased Copper Cogwheel",
+  "block.cogged_up.brass_encased_copper_cogwheel": "Brass Encased Copper Cogwheel",
+  "block.cogged_up.copper_encased_copper_cogwheel": "Copper Encased Copper Cogwheel",
+  "block.cogged_up.andesite_encased_large_copper_cogwheel": "Andesite Encased Large Copper Cogwheel",
+  "block.cogged_up.brass_encased_large_copper_cogwheel": "Brass Encased Large Copper Cogwheel",
+  "block.cogged_up.copper_encased_large_copper_cogwheel": "Copper Encased Large Copper Cogwheel",
+
+  "block.cogged_up.copper_encased_cogwheel": "Copper Encased Cogwheel",
+  "block.cogged_up.copper_encased_large_cogwheel": "Copper Encased Large Cogwheel",
+  "block.cogged_up.copper_encased_shaft": "Copper Encased Shaft"
 }
