@@ -6,5 +6,30 @@
   "block.cogged_up.copper_cogwheel": "구리 톱니바퀴",
   "block.cogged_up.large_copper_cogwheel": "큰 구리 톱니바퀴",
   "block.cogged_up.industrial_iron_cogwheel": "산업용 톱니바퀴",
-  "block.cogged_up.large_industrial_iron_cogwheel": "큰 산업용 톱니바퀴"
+  "block.cogged_up.large_industrial_iron_cogwheel": "큰 산업용 톱니바퀴",
+
+  "block.cogged_up.andesite_encased_andesite_cogwheel": "안산암 케이스를 씌운 안산암 톱니바퀴",
+  "block.cogged_up.brass_encased_andesite_cogwheel": "황동 케이스를 씌운 안산암 톱니바퀴",
+  "block.cogged_up.copper_encased_andesite_cogwheel": "구리 케이스를 씌운 안산암 톱니바퀴",
+  "block.cogged_up.andesite_encased_large_andesite_cogwheel": "안산암 케이스를 씌운 큰 안산암 톱니바퀴",
+  "block.cogged_up.brass_encased_large_andesite_cogwheel": "황동 케이스를 씌운 큰 안산암 톱니바퀴",
+  "block.cogged_up.copper_encased_large_andesite_cogwheel": "구리 케이스를 씌운 큰 안산암 톱니바퀴",
+
+  "block.cogged_up.andesite_encased_brass_cogwheel": "안산암 케이스를 씌운 황동 톱니바퀴",
+  "block.cogged_up.brass_encased_brass_cogwheel": "황동 케이스를 씌운 황동 톱니바퀴",
+  "block.cogged_up.copper_encased_brass_cogwheel": "구리 케이스를 씌운 황동 톱니바퀴",
+  "block.cogged_up.andesite_encased_large_brass_cogwheel": "안산암 케이스를 씌운 큰 황동 톱니바퀴",
+  "block.cogged_up.brass_encased_large_brass_cogwheel": "황동 케이스를 씌운 큰 황동 톱니바퀴",
+  "block.cogged_up.copper_encased_large_brass_cogwheel": "구리 케이스를 씌운 큰 황동 톱니바퀴",
+
+  "block.cogged_up.andesite_encased_copper_cogwheel": "안산암 케이스를 씌운 구리 톱니바퀴",
+  "block.cogged_up.brass_encased_copper_cogwheel": "황동 케이스를 씌운 구리 톱니바퀴",
+  "block.cogged_up.copper_encased_copper_cogwheel": "구리 케이스를 씌운 구리 톱니바퀴",
+  "block.cogged_up.andesite_encased_large_copper_cogwheel": "안산암 케이스를 씌운 큰 구리 톱니바퀴",
+  "block.cogged_up.brass_encased_large_copper_cogwheel": "황동 케이스를 씌운 큰 구리 톱니바퀴",
+  "block.cogged_up.copper_encased_large_copper_cogwheel": "구리 케이스를 씌운 큰 구리 톱니바퀴",
+
+  "block.cogged_up.copper_encased_cogwheel": "구리 케이스를 씌운 톱니바퀴",
+  "block.cogged_up.copper_encased_large_cogwheel": "구리 케이스를 씌운 큰 톱니바퀴",
+  "block.cogged_up.copper_encased_shaft": "구리 케이스를 씌운 축"
 }
