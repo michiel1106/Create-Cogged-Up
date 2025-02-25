@@ -7,4 +7,29 @@
   "block.cogged_up.large_copper_cogwheel": "Большая медная шестерня",
   "block.cogged_up.industrial_iron_cogwheel": "Промышленная шестерня",
   "block.cogged_up.large_industrial_iron_cogwheel": "Большая промышленная шестерня"
+
+  "block.cogged_up.andesite_encased_andesite_cogwheel": "Андезитовая шестерня в андезитовом корпусе",
+  "block.cogged_up.brass_encased_andesite_cogwheel": "Андезитовая шестерня в латунном корпусе",
+  "block.cogged_up.copper_encased_andesite_cogwheel": "Андезитовая шестерня в медном корпусе",
+  "block.cogged_up.andesite_encased_large_andesite_cogwheel": "Большая андезитовая шестерня в андезитовом корпусе",
+  "block.cogged_up.brass_encased_large_andesite_cogwheel": "Большая андезитовая шестерня в латунном корпусе",
+  "block.cogged_up.copper_encased_large_andesite_cogwheel": "Большая андезитовая шестерня в медном корпусе",
+
+  "block.cogged_up.andesite_encased_brass_cogwheel": "Латунная шестерня в андезитовом корпусе",
+  "block.cogged_up.brass_encased_brass_cogwheel": "Латунная шестерня в латунном корпусе",
+  "block.cogged_up.copper_encased_brass_cogwheel": "Латунная шестерня в медном корпусе",
+  "block.cogged_up.andesite_encased_large_brass_cogwheel": "Большая латунная шестерня в андезитовом корпусе",
+  "block.cogged_up.brass_encased_large_brass_cogwheel": "Большая латунная шестерня в латунном корпусе",
+  "block.cogged_up.copper_encased_large_brass_cogwheel": "Большая латунная шестерня в медном корпусе",
+
+  "block.cogged_up.andesite_encased_copper_cogwheel": "Медная шестерня в андезитовом корпусе",
+  "block.cogged_up.brass_encased_copper_cogwheel": "Медная шестерня в латунном корпусе",
+  "block.cogged_up.copper_encased_copper_cogwheel": "Медная шестерня в медном корпусе",
+  "block.cogged_up.andesite_encased_large_copper_cogwheel": "Большая медная шестерня в андезитовом корпусе",
+  "block.cogged_up.brass_encased_large_copper_cogwheel": "Большая медная шестерня в латунном корпусе",
+  "block.cogged_up.copper_encased_large_copper_cogwheel": "Большая медная шестерня в медном корпусе",
+
+  "block.cogged_up.copper_encased_cogwheel": "Шестерня в медном корпусе",
+  "block.cogged_up.copper_encased_large_cogwheel": "Большая шестерня в медном корпусе",
+  "block.cogged_up.copper_encased_shaft": "Вал в медном корпусе"
 }
