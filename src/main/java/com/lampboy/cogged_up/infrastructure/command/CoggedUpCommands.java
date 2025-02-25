@@ -29,6 +29,7 @@ import net.minecraft.world.level.saveddata.SavedData;
 import net.minecraft.world.level.storage.DimensionDataStorage;
 
 import java.awt.*;
+import java.util.Map;
 import java.util.function.Predicate;
 
 public class CoggedUpCommands {
@@ -52,27 +53,22 @@ public class CoggedUpCommands {
                                                                                     DimensionDataStorage dataStorage = server.overworld().getDataStorage();
 
                                                                                     float factor = FloatArgumentType.getFloat(context, "factor");
-                                                                                    String material = StringArgumentType.getString(context, "material");
+                                                                                    String name = StringArgumentType.getString(context, "material");
 
-                                                                                    StressReductionSavedData savedData
+                                                                                    StressReductionSavedData reductionSavedData
                                                                                             = dataStorage.computeIfAbsent(StressReductionSavedData::load, StressReductionSavedData::new, "cogged_up_stress_reduction");
 
-                                                                                    switch (material) {
-                                                                                        default -> {
-                                                                                            player.sendSystemMessage(Component.literal("Failed to specify material"));
+                                                                                    boolean isMaterialPresent = reductionSavedData.setFactor(name, factor);
+
+                                                                                    if (!isMaterialPresent) {
+                                                                                        player.sendSystemMessage(Component.literal("Failed to specify material"));
                                                                                             return 0;
-                                                                                        }
-                                                                                        case "wood" -> savedData.wood = factor;
-                                                                                        case "andesite" -> savedData.andesite = factor;
-                                                                                        case "brass" -> savedData.brass = factor;
-                                                                                        case "copper" -> savedData.copper = factor;
-                                                                                        case "industrial" -> savedData.industrial = factor;
                                                                                     }
 
                                                                                     player.sendSystemMessage(Component.literal(
-                                                                                            "Set the stress reduction factor of " + material + " cogwheels to " + factor
+                                                                                            "Set the stress reduction factor of " + name + " cogwheels to " + factor
                                                                                     ));
-                                                                                    savedData.setDirty();
+                                                                                    reductionSavedData.setDirty();
                                                                                     return Command.SINGLE_SUCCESS;
                                                                                 })
                                                                 )
@@ -85,18 +81,22 @@ public class CoggedUpCommands {
                                                     ServerPlayer player = context.getSource().getPlayer();
                                                     DimensionDataStorage dataStorage = server.overworld().getDataStorage();
 
-                                                    StressReductionSavedData savedData
+                                                    StressReductionSavedData reductionSavedData
                                                             = dataStorage.computeIfAbsent(StressReductionSavedData::load, StressReductionSavedData::new, "cogged_up_stress_reduction");
+                                                    Map<String, Float> factors = reductionSavedData.getFactors();
 
-                                                    player.sendSystemMessage(
-                                                            Component.literal("The Current Stress Reduction: \n"
-                                                                    + "Wood: " + savedData.wood + "\n"
-                                                                    + "Andesite: " + savedData.andesite + "\n"
-                                                                    + "Brass: " + savedData.brass + "\n"
-                                                                    + "Copper: " + savedData.copper + "\n"
-                                                                    + "Industrial: " + savedData.industrial
-                                                            )
-                                                    );
+                                                    player.sendSystemMessage(Component.literal(
+                                                            "Current stress reduction factors for cogwheels:"
+                                                    ));
+
+                                                    for (Map.Entry<String, Float> entry: factors.entrySet()) {
+                                                        String name = entry.getKey();
+                                                        Float factor = entry.getValue();
+
+                                                        player.sendSystemMessage(Component.literal(
+                                                                name + ": " + factor
+                                                        ));
+                                                    }
 
                                                     return Command.SINGLE_SUCCESS;
                                                 })

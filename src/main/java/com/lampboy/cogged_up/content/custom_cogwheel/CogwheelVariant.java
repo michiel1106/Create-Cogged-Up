@@ -15,22 +15,26 @@ public enum CogwheelVariant {
     WOOD(1, SharedProperties::wooden,
             p -> p.mapColor(MapColor.DIRT),
             AllPartialModels.SHAFTLESS_COGWHEEL,
-            AllPartialModels.SHAFTLESS_LARGE_COGWHEEL),
+            AllPartialModels.SHAFTLESS_LARGE_COGWHEEL,
+            "wood"),
 
     ANDESITE(2, SharedProperties::stone,
             p -> p.mapColor(MapColor.STONE),
             CoggedUpPartialModels.ANDESITE_COGWHEEL_SHAFTLESS,
-            CoggedUpPartialModels.LARGE_ANDESITE_COGWHEEL_SHAFTLESS),
+            CoggedUpPartialModels.LARGE_ANDESITE_COGWHEEL_SHAFTLESS,
+            "andesite"),
 
     BRASS(5, SharedProperties::softMetal,
             p -> p.mapColor(MapColor.TERRACOTTA_YELLOW),
             CoggedUpPartialModels.BRASS_COGWHEEL_SHAFTLESS,
-            CoggedUpPartialModels.LARGE_BRASS_COGWHEEL_SHAFTLESS),
+            CoggedUpPartialModels.LARGE_BRASS_COGWHEEL_SHAFTLESS,
+            "brass"),
 
     COPPER(3, SharedProperties::copperMetal,
             p -> p.mapColor(MapColor.COLOR_ORANGE),
             CoggedUpPartialModels.COPPER_COGWHEEL_SHAFTLESS,
-            CoggedUpPartialModels.LARGE_COPPER_COGWHEEL_SHAFTLESS),
+            CoggedUpPartialModels.LARGE_COPPER_COGWHEEL_SHAFTLESS,
+            "copper"),
 
     INDUSTRIAL_IRON(4, SharedProperties::softMetal,
             p -> p.mapColor(MapColor.COLOR_GRAY)
@@ -39,7 +43,8 @@ public enum CogwheelVariant {
             //since small shaftless partial model of industrial cog doesn't have any usage
             //I have set it to just Create default cogwheel shaftless model. Can't be bothered to set it to null.
             AllPartialModels.SHAFTLESS_COGWHEEL,
-            CoggedUpPartialModels.LARGE_INDUSTRIAL_IRON_COGWHEEL_SHAFTLESS
+            CoggedUpPartialModels.LARGE_INDUSTRIAL_IRON_COGWHEEL_SHAFTLESS,
+            "industrial"
     );
 
     public final float stressReductionFactor;
@@ -47,15 +52,17 @@ public enum CogwheelVariant {
     public final NonNullUnaryOperator<BlockBehaviour.Properties> properties;
     public final PartialModel smallShaftlessPartialModel;
     public final PartialModel largeShaftlessPartialModel;
+    public final String stringName;
 
     CogwheelVariant(float stressReductionFactor,
                     NonNullSupplier<Block> initialProperties, NonNullUnaryOperator<BlockBehaviour.Properties> properties,
-                    PartialModel smallShaftlessPartialModel, PartialModel largeShaftlessPartialModel) {
+                    PartialModel smallShaftlessPartialModel, PartialModel largeShaftlessPartialModel, String stringName) {
         this.initialProperties = initialProperties;
         this.stressReductionFactor = stressReductionFactor;
         this.properties = properties;
         this.smallShaftlessPartialModel = smallShaftlessPartialModel;
         this.largeShaftlessPartialModel = largeShaftlessPartialModel;
+        this.stringName = stringName;
     }
 
     public NonNullSupplier<Block> getInitialProperties() {
@@ -76,5 +83,9 @@ public enum CogwheelVariant {
 
     public PartialModel getSmallShaftlessPartialModel() {
         return smallShaftlessPartialModel;
+    }
+
+    public String getStringName() {
+        return stringName;
     }
 }

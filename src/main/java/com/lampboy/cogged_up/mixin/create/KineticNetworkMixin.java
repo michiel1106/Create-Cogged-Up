@@ -2,6 +2,7 @@ package com.lampboy.cogged_up.mixin.create;
 
 import com.lampboy.cogged_up.content.custom_cogwheel.CustomCogwheelBlock;
 import com.lampboy.cogged_up.content.custom_cogwheel.IHasMaterial;
+import com.lampboy.cogged_up.content.custom_cogwheel.StressReductionSavedData;
 import com.simibubi.create.AllBlocks;
 import com.simibubi.create.content.kinetics.KineticNetwork;
 import com.simibubi.create.content.kinetics.base.KineticBlockEntity;
@@ -12,11 +13,13 @@ import com.simibubi.create.content.kinetics.simpleRelays.encased.EncasedCogwheel
 import com.simibubi.create.foundation.utility.Iterate;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.storage.DimensionDataStorage;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.gen.Accessor;
@@ -39,6 +42,19 @@ public class KineticNetworkMixin {
      * */
     @Inject(at = @At("TAIL"), method = "calculateStress", remap = false, cancellable = true)
     private void coggedUp$calculateStress(CallbackInfoReturnable<Float> cir) {
+
+        if (members.isEmpty()) return;
+
+        KineticBlockEntity kbe = (KineticBlockEntity) members.keySet().toArray()[0];
+        Level world = kbe.getLevel();
+
+        if (world == null) return;
+
+        MinecraftServer server = world.getServer();
+
+        // Null check after null check
+        if (server == null) return;
+
         if (cir.getReturnValue() == 0.0f) return;
 
         float totalStressReductionFactor = 0;
@@ -58,12 +74,22 @@ public class KineticNetworkMixin {
 
         if (cogList.isEmpty()) return;
 
+        DimensionDataStorage dataStorage = server.overworld().getDataStorage();
+        StressReductionSavedData reductionSavedData = dataStorage.computeIfAbsent(
+                StressReductionSavedData::load, StressReductionSavedData::new, "cogged_up_stress_reduction"
+        );
+
         for (Object block : cogList) {
             int size = cogList.size();
 
             if (block instanceof IHasMaterial hasMaterial) {
+
+                Optional<Float> stressReductionFactor = reductionSavedData.getFactor(hasMaterial.getMaterial().getStringName());
+
+                if (stressReductionFactor.isEmpty()) return;
+
                 totalStressReductionFactor +=
-                        hasMaterial.getMaterial().getStressReductionFactor()/size;
+                        stressReductionFactor.get()/size;
                 continue;
             }
 
