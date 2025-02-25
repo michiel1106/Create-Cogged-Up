@@ -6,7 +6,6 @@ import com.jozufozu.flywheel.api.Material;
 import com.jozufozu.flywheel.api.MaterialManager;
 import com.jozufozu.flywheel.core.PartialModel;
 import com.jozufozu.flywheel.util.transform.TransformStack;
-import com.lampboy.cogged_up.CoggedUpPartialModels;
 import com.lampboy.cogged_up.content.custom_cogwheel.CogwheelVariant;
 import com.lampboy.cogged_up.content.custom_cogwheel.IHasMaterial;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -41,7 +40,7 @@ public class CustomEncasedCogwheelBEInstance extends KineticBlockEntityInstance<
         }
 
         //sets material as default in case it doesn't have material for some reason.
-        material = CogwheelVariant.DEFAULT;
+        material = CogwheelVariant.WOOD;
     }
 
     private final boolean large;

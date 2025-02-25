@@ -12,7 +12,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 
 public enum CogwheelVariant {
-    DEFAULT(1, SharedProperties::wooden,
+    WOOD(1, SharedProperties::wooden,
             p -> p.mapColor(MapColor.DIRT),
             AllPartialModels.SHAFTLESS_COGWHEEL,
             AllPartialModels.SHAFTLESS_LARGE_COGWHEEL),
