@@ -1,5 +1,6 @@
 package com.lampboy.cogged_up.mixin.create;
 
+import com.lampboy.cogged_up.content.custom_cogwheel.CogwheelVariant;
 import com.lampboy.cogged_up.content.custom_cogwheel.CustomCogwheelBlock;
 import com.lampboy.cogged_up.content.custom_cogwheel.IHasMaterial;
 import com.lampboy.cogged_up.content.custom_cogwheel.StressReductionSavedData;
@@ -81,17 +82,16 @@ public class KineticNetworkMixin {
 
         for (Object block : cogList) {
             int size = cogList.size();
+            CogwheelVariant material = block instanceof IHasMaterial
+                    ? ((IHasMaterial) block).getMaterial()
+                    : CogwheelVariant.WOOD;
 
-            if (block instanceof IHasMaterial hasMaterial) {
+            Optional<Float> stressReductionFactor = reductionSavedData.getFactor(material.getStringName());
 
-                Optional<Float> stressReductionFactor = reductionSavedData.getFactor(hasMaterial.getMaterial().getStringName());
+            if (stressReductionFactor.isEmpty()) return;
 
-                if (stressReductionFactor.isEmpty()) return;
-
-                totalStressReductionFactor +=
-                        stressReductionFactor.get()/size;
-                continue;
-            }
+            totalStressReductionFactor +=
+                    stressReductionFactor.get()/size;
 
             totalStressReductionFactor += (float) 1 /size;
         }

@@ -34,6 +34,7 @@ import java.util.function.Predicate;
 
 public class CoggedUpCommands {
     public static final Predicate<CommandSourceStack> SOURCE_IS_PLAYER = cs -> cs.getEntity() instanceof Player;
+    public static final Predicate<CommandSourceStack> SOURCE_HAS_OP = cs -> cs.hasPermission(2);
 
     public static void register(CommandDispatcher<CommandSourceStack> dispatcher) {
 
@@ -41,6 +42,7 @@ public class CoggedUpCommands {
                 .then(
                         Commands.literal("stressReductionConfig")
                                 .requires(SOURCE_IS_PLAYER)
+                                .requires(SOURCE_HAS_OP)
                                 .then(
                                         Commands.literal("set")
                                                 .then(
