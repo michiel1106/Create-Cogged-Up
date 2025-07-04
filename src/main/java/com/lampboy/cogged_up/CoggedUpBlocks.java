@@ -11,6 +11,8 @@ import com.simibubi.create.content.kinetics.simpleRelays.encased.EncasedCogCTBeh
 import com.simibubi.create.foundation.data.*;
 import com.simibubi.create.foundation.utility.Couple;
 import com.tterrag.registrate.util.entry.BlockEntry;
+import com.tterrag.registrate.util.nullness.NonNullSupplier;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 
@@ -76,7 +78,7 @@ public class CoggedUpBlocks {
                             AllSpriteShifts.ANDESITE_ENCASED_COGWHEEL_OTHERSIDE))))
             .register();
 
-    //
+
 
     public static final BlockEntry<CustomEncasedCogwheelBlock> ANDESITE_ENCASED_BRASS_COGWHEEL = CoggedUp.REGISTRATE.block
                     ("andesite_encased_brass_cogwheel", p -> new CustomEncasedCogwheelBlock(p, false, AllBlocks.ANDESITE_CASING::get, CogwheelVariant.BRASS))

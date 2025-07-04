@@ -31,5 +31,6 @@
 
   "block.cogged_up.copper_encased_cogwheel": "Шестерня в медном корпусе",
   "block.cogged_up.copper_encased_large_cogwheel": "Большая шестерня в медном корпусе",
-  "block.cogged_up.copper_encased_shaft": "Вал в медном корпусе"
+  "block.cogged_up.copper_encased_shaft": "Вал в медном корпусе",
+  "itemGroup.cogged_up_base": "Cogged Up"
 }

@@ -18,9 +18,14 @@ public class CoggedUp {
 
     public static final Logger LOGGER = LogUtils.getLogger();
 
-    public static final CreateRegistrate REGISTRATE = CreateRegistrate.create(ADDON_ID)
+  //  public static final CreateRegistrate REGISTRATE = CreateRegistrate.create(ADDON_ID)
+ //           //All the items will show up in SEARCH tab if this is not set.
+  //          .defaultCreativeTab((ResourceKey<CreativeModeTab>) null);
+
+
+    public static final CreateRegistrate REGISTRATE = CreateRegistrate.create(ADDON_ID);
             //All the items will show up in SEARCH tab if this is not set.
-            .defaultCreativeTab((ResourceKey<CreativeModeTab>) null);
+
 
     public static ResourceLocation asResource(String path) {
         return new ResourceLocation(ADDON_ID, path);

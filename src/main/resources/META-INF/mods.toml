@@ -19,7 +19,7 @@ config="cogged_up.mixins.json"
 [[dependencies.cogged_up]]
     modId="forge"
     mandatory=true
-    versionRange="[47,)"
+    versionRange="[43,)"
     ordering="NONE"
     side="BOTH"
 
@@ -33,6 +33,6 @@ config="cogged_up.mixins.json"
 [[dependencies.cogged_up]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.20.1, 1.21)"
+    versionRange="[1.19.2, 1.20)"
     ordering="NONE"
     side="BOTH"

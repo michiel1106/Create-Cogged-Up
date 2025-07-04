@@ -24,7 +24,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.MapColor;
+
 
 import java.util.function.Supplier;
 
@@ -42,6 +42,7 @@ public class CoggedUpBuilderTransformers {
                 .blockstate(BlockStateGen.axisBlockProvider(false))
                 .onRegister(CreateRegistrate.blockModel(() -> BracketedKineticBlockModel::new))
                 .item(CogwheelBlockItem::new)
+                .tab(() -> CoggedUpCreativeTabs.BASE_TAB)
                 .build();
     }
 
@@ -76,14 +77,14 @@ public class CoggedUpBuilderTransformers {
                             .texture("casing", Create.asResource("block/" + casing + "_casing"))
                             .texture("particle", Create.asResource("block/" + casing + "_casing"))
                             .texture("4", Create.asResource("block/" + gearbox))
-                            .texture("1", new ResourceLocation("block/stripped_" + wood + "_log_top"))
+                            .texture("1", ResourceLocation.parse("block/stripped_" + wood + "_log_top"))
                             .texture("side", Create.asResource("block/" + casing + encasedSuffix));
                 }, false))
                 .item()
                 .model((c, p) -> p.withExistingParent(c.getName(), p.modLoc("block/" + blockFolder + "/item"))
                         .texture("casing", Create.asResource("block/" + casing + "_casing"))
                         .texture("particle", Create.asResource("block/" + casing + "_casing"))
-                        .texture("1", new ResourceLocation("block/stripped_" + wood + "_log_top"))
+                        .texture("1", ResourceLocation.parse("block/stripped_" + wood + "_log_top"))
                         .texture("side", Create.asResource("block/" + casing + encasedSuffix)))
                 .build();
     }

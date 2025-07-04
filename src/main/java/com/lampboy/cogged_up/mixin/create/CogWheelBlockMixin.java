@@ -36,7 +36,7 @@ public abstract class CogWheelBlockMixin {
     private void coggedUp$use(BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand,
                               BlockHitResult ray, CallbackInfoReturnable<InteractionResult> cir) {
         ItemStack heldItem = player.getItemInHand(hand);
-        if (heldItem.getItem() == AllBlocks.COPPER_CASING.asItem()) {
+        if (heldItem.getItem() == AllBlocks.COPPER_CASING.get().asItem()) {
 
             if (isLarge) {
                 CoggedUpBlocks.COPPER_ENCASED_LARGE_COGWHEEL.get()

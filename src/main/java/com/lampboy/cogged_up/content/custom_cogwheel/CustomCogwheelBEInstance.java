@@ -5,9 +5,10 @@ import com.jozufozu.flywheel.api.Material;
 import com.jozufozu.flywheel.api.MaterialManager;
 import com.jozufozu.flywheel.core.PartialModel;
 import com.jozufozu.flywheel.util.transform.TransformStack;
-import com.lampboy.cogged_up.CoggedUpPartialModels;
+
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.math.Axis;
+
+import com.mojang.math.Vector3f;
 import com.simibubi.create.AllPartialModels;
 import com.simibubi.create.content.kinetics.base.KineticBlockEntityRenderer;
 import com.simibubi.create.content.kinetics.base.SingleRotatingInstance;
@@ -95,7 +96,7 @@ public class CustomCogwheelBEInstance extends SingleRotatingInstance<BracketedKi
         TransformStack.cast(poseStack)
                 .centre()
                 .rotateToFace(facing)
-                .multiply(Axis.XN.rotationDegrees(-90))
+                .multiply(Vector3f.XN.rotationDegrees(-90))
                 .unCentre();
         return poseStack;
     }

@@ -31,5 +31,7 @@
 
   "block.cogged_up.copper_encased_cogwheel": "Copper Encased Cogwheel",
   "block.cogged_up.copper_encased_large_cogwheel": "Copper Encased Large Cogwheel",
-  "block.cogged_up.copper_encased_shaft": "Copper Encased Shaft"
+  "block.cogged_up.copper_encased_shaft": "Copper Encased Shaft",
+  "itemGroup.cogged_up_base": "Cogged Up"
+
 }

@@ -24,8 +24,13 @@ public class CustomCogwheelBlock extends CogWheelBlock implements IHasMaterial {
 
     public CustomCogwheelBlock(boolean large, Properties properties, CogwheelVariant material) {
         super(large, properties);
+
+
+
         this.material = material;
     }
+
+
 
     @Override
     public CogwheelVariant getMaterial() {

@@ -25,7 +25,7 @@ public class ShaftBlockMixin {
     private void coggedUp$use(BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand,
                               BlockHitResult ray, CallbackInfoReturnable<InteractionResult> cir) {
         ItemStack heldItem = player.getItemInHand(hand);
-        if (heldItem.getItem() == AllBlocks.COPPER_CASING.asItem()) {
+        if (heldItem.getItem() == AllBlocks.COPPER_CASING.get().asItem()) {
             CoggedUpBlocks.COPPER_ENCASED_SHAFT.get().handleEncasing(state, world, pos, heldItem, player, hand, ray);
             coggedUp$playEncasingSound(world, pos);
             cir.setReturnValue(InteractionResult.SUCCESS);

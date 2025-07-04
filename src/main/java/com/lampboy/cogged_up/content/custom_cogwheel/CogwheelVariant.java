@@ -9,35 +9,35 @@ import com.tterrag.registrate.util.nullness.NonNullUnaryOperator;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.MaterialColor;
 
 public enum CogwheelVariant {
     WOOD(1, SharedProperties::wooden,
-            p -> p.mapColor(MapColor.DIRT),
+            p -> p.color(MaterialColor.DIRT),
             AllPartialModels.SHAFTLESS_COGWHEEL,
             AllPartialModels.SHAFTLESS_LARGE_COGWHEEL,
             "wood"),
 
     ANDESITE(2, SharedProperties::stone,
-            p -> p.mapColor(MapColor.STONE),
+            p -> p.color(MaterialColor.STONE),
             CoggedUpPartialModels.ANDESITE_COGWHEEL_SHAFTLESS,
             CoggedUpPartialModels.LARGE_ANDESITE_COGWHEEL_SHAFTLESS,
             "andesite"),
 
     BRASS(5, SharedProperties::softMetal,
-            p -> p.mapColor(MapColor.TERRACOTTA_YELLOW),
+            p -> p.color(MaterialColor.TERRACOTTA_YELLOW),
             CoggedUpPartialModels.BRASS_COGWHEEL_SHAFTLESS,
             CoggedUpPartialModels.LARGE_BRASS_COGWHEEL_SHAFTLESS,
             "brass"),
 
     COPPER(3, SharedProperties::copperMetal,
-            p -> p.mapColor(MapColor.COLOR_ORANGE),
+            p -> p.color(MaterialColor.COLOR_ORANGE),
             CoggedUpPartialModels.COPPER_COGWHEEL_SHAFTLESS,
             CoggedUpPartialModels.LARGE_COPPER_COGWHEEL_SHAFTLESS,
             "copper"),
 
     INDUSTRIAL_IRON(4, SharedProperties::softMetal,
-            p -> p.mapColor(MapColor.COLOR_GRAY)
+            p -> p.color(MaterialColor.COLOR_GRAY)
             .sound(SoundType.NETHERITE_BLOCK)
             .requiresCorrectToolForDrops(),
             //since small shaftless partial model of industrial cog doesn't have any usage

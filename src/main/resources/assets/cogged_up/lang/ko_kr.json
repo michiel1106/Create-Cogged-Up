@@ -31,5 +31,6 @@
 
   "block.cogged_up.copper_encased_cogwheel": "구리 케이스를 씌운 톱니바퀴",
   "block.cogged_up.copper_encased_large_cogwheel": "구리 케이스를 씌운 큰 톱니바퀴",
-  "block.cogged_up.copper_encased_shaft": "구리 케이스를 씌운 축"
+  "block.cogged_up.copper_encased_shaft": "구리 케이스를 씌운 축",
+  "itemGroup.cogged_up_base": "Cogged Up"
 }
